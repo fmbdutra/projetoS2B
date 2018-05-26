@@ -1,0 +1,29 @@
+package br.pucrs.appObject;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+public class HomeAppObject {
+	private WebDriver driver;
+	
+	public HomeAppObject(WebDriver driver) {
+		this.driver=driver;
+	}
+	
+	public WebElement getFonteDoTexto() {
+		WebElement tamanhoFonte = this.driver.findElement(By.xpath("/html/body/div[3]/div/div/div[2]/div[2]/div/ul/li[1]/a"));
+		return tamanhoFonte;
+	}
+	
+	public WebElement getAumentaTextoButton() {
+		return this.driver.findElement(By.id("txt-aumenta1"));
+	}
+	
+	public WebElement getDiminuiTextoButton() {
+		return this.driver.findElement(By.id("txt-diminuir1"));
+	}
+		
+}
+
+
