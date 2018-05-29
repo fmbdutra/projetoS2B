@@ -6,7 +6,6 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-import br.pucrs.tasks.AumentaTamanhoDaLetraTask;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import verificationPoints.AumentaTamanhoDaLetraVerificationPoint;
 
