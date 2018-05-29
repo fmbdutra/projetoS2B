@@ -23,6 +23,14 @@ public class HomeAppObject {
 	public WebElement getDiminuiTextoButton() {
 		return this.driver.findElement(By.id("txt-diminuir1"));
 	}
+	
+	public WebElement getEnglishButton() {
+		return this.driver.findElement(By.xpath("//*[@id=\"list-idiomas\"]/ul/li[1]/a"));
+	}
+	
+	public WebElement getTrackAndTrace() {
+		return this.driver.findElement(By.xpath("//*[@id=\"rastreamento-obj\"]/form/div[1]/label/strong"));
+	}
 		
 }
 
