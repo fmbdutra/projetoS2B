@@ -27,6 +27,7 @@ public class BuscarAgenciasAppObject {
 		public WebElement getMunicipioComboBox() {
 			return this.driver.findElement(By.id("municipioAgencia"));
 		}
+		
 		public WebElement getBairroComboBox() {
 			return this.driver.findElement(By.id("bairroAgencia"));
 		}
@@ -48,14 +49,6 @@ public class BuscarAgenciasAppObject {
 		}
 		
 		public WebElement getLocalidadeRadialButton() {
-			return this.driver.findElement(By.xpath("//*[@id=\"formBuscaAgencia\"]/div/div/div[1]/span[2]"));			
+			return this.driver.findElement(By.xpath("//*[@id=\"formBuscaAgencia\"]/div/div/div[1]/span[2]"));
 		}
-		
-		public WebElement getBuscarAgenciasPorLocalidadeEServicoEstadoComboBox() {
-			return this.driver.findElement(By.id("estadoAgencia"));
-		}
-		
-		public WebElement getBuscarAgenciasPorLocalidadeEServicoMunicipioComboBox() {
-			return this.driver.findElement(By.id("municipioAgencia"));
-		}		
 }
