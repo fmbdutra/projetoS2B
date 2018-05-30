@@ -7,6 +7,10 @@ import br.pucrs.appObject.BuscarAgenciasAppObject;
 
 public class BuscarAgenciaPorProximidadeTask {
 	private BuscarAgenciasAppObject buscarAgenciasAppObject;
+	
+	public void selecionarProximidadeRadialButton () {
+		this.buscarAgenciasAppObject.getProximidadeRadialButton().click();
+	}
 			
 	public BuscarAgenciaPorProximidadeTask(WebDriver driver) {
 		this.buscarAgenciasAppObject = new BuscarAgenciasAppObject(driver);

@@ -25,7 +25,7 @@ public class BuscarAgenciaPorProximidadeVerificationPoint {
 	public void checarEnderecoDaAgenciaNoMapa() throws InterruptedException {
 		this.buscarAgenciasTask.apertarBotaoBuscarAgencia();
 
-		this.buscarAgenciasTask.selecionarProximidadeRadialButton();
+		this.buscarAgenciaPorProximidadeTask.selecionarProximidadeRadialButton();
 
 		Report.log(Status.INFO, "Buscar Agências Por Proximidade Foi Selecionado");
 		String enderecoBuscado = "Rodovia RS 118, 11800 - Maria Regina, Alvorada - RS, 94834-670";

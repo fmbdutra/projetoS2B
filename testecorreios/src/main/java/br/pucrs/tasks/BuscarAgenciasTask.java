@@ -16,16 +16,8 @@ public class BuscarAgenciasTask {
 		this.buscarAgenciasAppObject = new BuscarAgenciasAppObject(driver);
 	}
 	
-	public void selecionarProximidadeRadialButton () {
-		this.buscarAgenciasAppObject.getProximidadeRadialButton().click();
-	}
-
 	public void apertarBotaoBuscarAgencia() {
 		this.homeAppObject.getBuscarAgencia().click();
-	}
-
-	public void selecionarServicoRadioButton() {
-		this.buscarAgenciasAppObject.getServicoRadialButton().click();
 	}
 
 	public void selecionarEstadoComboBox(int estado) {
