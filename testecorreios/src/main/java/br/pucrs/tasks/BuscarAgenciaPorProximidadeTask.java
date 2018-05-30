@@ -35,18 +35,7 @@ public class BuscarAgenciaPorProximidadeTask {
 		for(int x=1;x<=10;x++)
 		{
 			this.buscarAgenciasAppObject.buscarAgenciaPorProximidadePesquisarButton().sendKeys(Keys.ARROW_DOWN);
-			
-		} /*
-		this.buscarAgenciasAppObject.buscarAgenciaPorProximidadePesquisarButton().sendKeys(Keys.ARROW_DOWN);
-		this.buscarAgenciasAppObject.buscarAgenciaPorProximidadePesquisarButton().sendKeys(Keys.ARROW_DOWN);
-		this.buscarAgenciasAppObject.buscarAgenciaPorProximidadePesquisarButton().sendKeys(Keys.ARROW_DOWN);
-		this.buscarAgenciasAppObject.buscarAgenciaPorProximidadePesquisarButton().sendKeys(Keys.ARROW_DOWN);
-		this.buscarAgenciasAppObject.buscarAgenciaPorProximidadePesquisarButton().sendKeys(Keys.ARROW_DOWN);
-		this.buscarAgenciasAppObject.buscarAgenciaPorProximidadePesquisarButton().sendKeys(Keys.ARROW_DOWN);
-		this.buscarAgenciasAppObject.buscarAgenciaPorProximidadePesquisarButton().sendKeys(Keys.ARROW_DOWN);
-		this.buscarAgenciasAppObject.buscarAgenciaPorProximidadePesquisarButton().sendKeys(Keys.ARROW_DOWN);
-		this.buscarAgenciasAppObject.buscarAgenciaPorProximidadePesquisarButton().sendKeys(Keys.ARROW_DOWN);
-		*/
+		} 
 	
 	}
 	

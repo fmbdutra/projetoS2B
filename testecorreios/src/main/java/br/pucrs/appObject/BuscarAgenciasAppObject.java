@@ -32,5 +32,23 @@ public class BuscarAgenciasAppObject {
 			return this.driver.findElement(By.id("imgPesquisaMap"));
 		}
 		
+		public WebElement buscarAgenciasPorLocalidadeRadialButton() {
+			return this.driver.findElement(By.xpath("//*[@id=\"formBuscaAgencia\"]/div/div/div[1]/span[2]"));			
+		}
+		
+		public WebElement buscarAgenciasPorLocalidadeEServicoEstadoComboBox() {
+			return this.driver.findElement(By.id("estadoAgencia"));
+		}
+		
+		public WebElement buscarAgenciasPorLocalidadeEServicoMunicipioComboBox() {
+			return this.driver.findElement(By.id("municipioAgencia"));
+		}
+		
+		public WebElement buscarAgenciasPorLocalidadeEServicoBairroComboBox() {
+			return this.driver.findElement(By.id("bairroAgencia"));
+		}
+		
+	
+		
 		
 }
