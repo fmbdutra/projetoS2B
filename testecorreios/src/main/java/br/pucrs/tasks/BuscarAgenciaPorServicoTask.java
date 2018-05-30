@@ -31,12 +31,15 @@ public class BuscarAgenciaPorServicoTask {
 			this.buscarAgenciasAppObject.getMunicipioComboBox();
 			y++;
 		} while (y == 400);
+		this.buscarAgenciasAppObject.getMunicipioComboBox().sendKeys(Keys.ENTER);
 	}
-	
-	public void selecionarBairroComboBox() {
+
+	public void selecionarBairroComboBox(int bairro) {
 		int z = 0;
 		do {
-			this.buscarAgenciasAppObject.getMunicipioComboBox();
-		}while(z == 7);
+			this.buscarAgenciasAppObject.getMunicipioComboBox().sendKeys(Keys.ENTER);
+			z++;
+		} while (z == bairro);
+		this.buscarAgenciasAppObject.getMunicipioComboBox().sendKeys(Keys.ENTER);
 	}
 }

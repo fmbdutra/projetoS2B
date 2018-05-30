@@ -11,9 +11,10 @@ public class BuscarAgenciasAppObject {
 			this.driver=driver;
 		}
 		
+		public WebElement
+		
 		public WebElement getProximidadeRadialButton() {
 			return this.driver.findElement(By.xpath("//*[@id=\"formBuscaAgencia\"]/div/div/div[1]/span[1]"));
-		
 		}
 		
 		public WebElement getServicoRadialButton() {

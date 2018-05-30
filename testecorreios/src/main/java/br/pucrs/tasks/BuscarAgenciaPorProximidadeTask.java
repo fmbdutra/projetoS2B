@@ -11,11 +11,7 @@ public class BuscarAgenciaPorProximidadeTask {
 	public BuscarAgenciaPorProximidadeTask(WebDriver driver) {
 		this.buscarAgenciasAppObject = new BuscarAgenciasAppObject(driver);
 	}
-	
-	public void selecionarBuscarAgenciaPorProximidade () {
-		this.buscarAgenciasAppObject.getProximidadeRadialButton().click();
-	}
-	
+
 	public void digitarLocalizacao(String endereco) {
 		this.buscarAgenciasAppObject.getEnderecoTextField().sendKeys(endereco);		
 	}
