@@ -11,42 +11,44 @@ public class BuscarAgenciasAppObject {
 			this.driver=driver;
 		}
 		
-		public WebElement buscarAgenciasPorProximidadeRadialButton() {
-			return this.driver.findElement(By.id("tipoBusca"));
+		public WebElement getBuscarAgenciasPorProximidadeRadialButton() {
+			return this.driver.findElement(By.xpath("//*[@id=\"formBuscaAgencia\"]/div/div/div[1]/span[1]"));
 		
 		}
 		
-		public WebElement buscarAgenciaPorProximidadePesquisarButton() {
+		public WebElement getBuscarAgenciaPorProximidadePesquisarButton() {
 			return this.driver.findElement(By.id("submit"));
 		}
 		
-		public WebElement buscarAgenciaPorProximidadeDigiteEnderecoTextField() {
+		public WebElement getBuscarAgenciaPorProximidadeDigiteEnderecoTextField() {
 			return this.driver.findElement(By.id("cepEndereco"));
 		}
 		
-		public WebElement mapaLocalizacaoAgenciaMap() {
+		public WebElement getMapaLocalizacaoAgenciaMap() {
 			return this.driver.findElement(By.cssSelector("map > div > div > div:nth-child(2) > a > div > img"));
 		}
 		
-		public WebElement imagemCarregamentoImg() {
+		public WebElement getImagemCarregamentoImg() {
 			return this.driver.findElement(By.id("imgPesquisaMap"));
 		}
 		
-		public WebElement buscarAgenciasPorLocalidadeRadialButton() {
+		public WebElement getBuscarAgenciasPorLocalidadeRadialButton() {
 			return this.driver.findElement(By.xpath("//*[@id=\"formBuscaAgencia\"]/div/div/div[1]/span[2]"));			
 		}
 		
-		public WebElement buscarAgenciasPorLocalidadeEServicoEstadoComboBox() {
+		public WebElement getBuscarAgenciasPorLocalidadeEServicoEstadoComboBox() {
 			return this.driver.findElement(By.id("estadoAgencia"));
 		}
 		
-		public WebElement buscarAgenciasPorLocalidadeEServicoMunicipioComboBox() {
+		public WebElement getBuscarAgenciasPorLocalidadeEServicoMunicipioComboBox() {
 			return this.driver.findElement(By.id("municipioAgencia"));
 		}
 		
-		public WebElement buscarAgenciasPorLocalidadeEServicoBairroComboBox() {
+		public WebElement getBuscarAgenciasPorLocalidadeEServicoBairroComboBox() {
 			return this.driver.findElement(By.id("bairroAgencia"));
 		}
+		
+
 		
 	
 		
