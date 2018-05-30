@@ -36,17 +36,22 @@ public class BuscarAgenciaPorProximidadeVerificationPoint {
 		this.buscarAgenciaPorProximidadeTask.pesquisarLocalizacao();
 		Report.log(Status.INFO, "O Botão 'Pesquisar' foi Pressionado");
 
-		Report.log(Status.INFO, "A marcação deve exibir a agência mais próxima do endereço pesquisado");
+		Report.log(Status.INFO, "A Marcação Deve Exibir a Agência Mais Próxima do Endereço Pesquisado");
 
-		while (this.buscarAgenciaPorProximidadeTask.verificaCarregamentodoMapa()==true) {
+		while (this.buscarAgenciaPorProximidadeTask.verificaCarregamentodoMapa()==false) {
 
-			Thread.sleep(1000);
-
+			Thread.sleep(1500);
 		}
-
+		
+	
+		Thread.sleep(1500);
+		
+		this.buscarAgenciaPorProximidadeTask.rolarPaginaParaVerificarMapa();
+				
 		Screenshot.capture(driver);
 
-		Report.log(Status.WARNING, "Verificar no captura de tela");
+		//Report.log(Status.WARNING, "Verificar no captura de tela");
+		Report.log(Status.WARNING, "Verificar no captura de tela", "**\\testecorreios\\reports\\screenshots\\*screenshot");
 
 	}
 

@@ -35,6 +35,10 @@ public class HomeAppObject {
 	public WebElement getTrackAndTrace() {
 		return this.driver.findElement(By.xpath("//*[@id=\"rastreamento-obj\"]/form/div[1]/label/strong"));
 	}
+	
+	public WebElement getBuscarAgencia() {
+		return this.driver.findElement(By.cssSelector("#content-servicos > ul > li:nth-child(5) > div.acao > a"));
+	}
 		
 }
 
