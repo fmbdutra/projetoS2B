@@ -16,26 +16,26 @@ public class BuscarAgenciasAppObject {
 		
 		}
 		
-		public WebElement getBuscarAgenciaPorProximidadePesquisarButton() {
+		public WebElement getProximidadePesquisarButton() {
 			return this.driver.findElement(By.id("submit"));
 		}
 		
-		public WebElement getBuscarAgenciaPorProximidadeDigiteEnderecoTextField() {
+		public WebElement getEnderecoTextField() {
 			return this.driver.findElement(By.id("cepEndereco"));
 		}
 		
-		public WebElement getMapaLocalizacaoAgenciaMap() {
+		public WebElement getLocalizacaoAgenciaMap() {
 			return this.driver.findElement(By.cssSelector("map > div > div > div:nth-child(2) > a > div > img"));
 		}
 		
-		public WebElement getImagemCarregamentoImg() {
+		public WebElement getCarregamentoImg() {
 			return this.driver.findElement(By.id("imgPesquisaMap"));
 		}
 		
-		public WebElement getBuscarAgenciasPorLocalidadeRadialButton() {
+		public WebElement getLocalidadeRadialButton() {
 			return this.driver.findElement(By.xpath("//*[@id=\"formBuscaAgencia\"]/div/div/div[1]/span[2]"));			
 		}
-		
+		/*
 		public WebElement getBuscarAgenciasPorLocalidadeEServicoEstadoComboBox() {
 			return this.driver.findElement(By.id("estadoAgencia"));
 		}
@@ -47,6 +47,29 @@ public class BuscarAgenciasAppObject {
 		public WebElement getBuscarAgenciasPorLocalidadeEServicoBairroComboBox() {
 			return this.driver.findElement(By.id("bairroAgencia"));
 		}
+		
+		public WebElement getDetalhesPrimeiraAgenciaLink() {
+			return this.driver.findElement(By.id("detalheAgencia1"));
+		}
+		
+		public WebElement getDetalhesBairroText() {
+			return this.driver.findElement(By.xpath("//*[@id=\"detalheAgencia1\"]/tbody/tr[4]/td/text()"));
+		}
+		
+		public WebElement getDetalhesMunicipioText() {
+			return this.driver.findElement(By.xpath("//*[@id=\"detalheAgencia1\"]/tbody/tr[5]/td/text()"));
+		}
+		
+		public WebElement getDetalheUFText() {
+			return this.driver.findElement(By.xpath("//*[@id=\"detalheAgencia1\"]/tbody/tr[7]/td/text()"));
+		}
+		*/
+		
+		
+		
+		
+		
+		
 		
 
 		
