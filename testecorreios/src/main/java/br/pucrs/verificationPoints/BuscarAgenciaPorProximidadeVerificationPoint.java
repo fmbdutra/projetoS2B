@@ -40,18 +40,18 @@ public class BuscarAgenciaPorProximidadeVerificationPoint {
 
 		while (this.buscarAgenciaPorProximidadeTask.verificaCarregamentodoMapa()==false) {
 
-			Thread.sleep(1500);
+			Thread.sleep(2000);
 		}
 		
 	
-		Thread.sleep(1500);
+		Thread.sleep(2000);
 		
 		this.buscarAgenciaPorProximidadeTask.rolarPaginaParaVerificarMapa();
 				
-		Screenshot.capture(driver);
+		
 
-		//Report.log(Status.WARNING, "Verificar no captura de tela");
-		Report.log(Status.WARNING, "Verificar no captura de tela", "**\\testecorreios\\reports\\screenshots\\*screenshot");
+		Report.log(Status.WARNING, "Verificar no captura de tela", Screenshot.capture(driver));
+		//Report.log(Status.WARNING, "Verificar no captura de tela", "**\\testecorreios\\reports\\screenshots\\*screenshot");
 
 	}
 

@@ -8,8 +8,7 @@ import br.pucrs.appObject.BuscarAgenciasAppObject;
 
 public class BuscarAgenciaPorProximidadeTask {
 	private BuscarAgenciasAppObject buscarAgenciasAppObject;
-	private JavascriptExecutor driver;
-		
+			
 	public BuscarAgenciaPorProximidadeTask(WebDriver driver) {
 		this.buscarAgenciasAppObject = new BuscarAgenciasAppObject(driver);
 	}
@@ -31,14 +30,23 @@ public class BuscarAgenciaPorProximidadeTask {
 	}
 	
 	public void rolarPaginaParaVerificarMapa() {
-		this.buscarAgenciasAppObject.buscarAgenciaPorProximidadePesquisarButton().sendKeys(Keys.ARROW_DOWN);
-		this.buscarAgenciasAppObject.buscarAgenciaPorProximidadePesquisarButton().sendKeys(Keys.ARROW_DOWN);
-		this.buscarAgenciasAppObject.buscarAgenciaPorProximidadePesquisarButton().sendKeys(Keys.ARROW_DOWN);
-		this.buscarAgenciasAppObject.buscarAgenciaPorProximidadePesquisarButton().sendKeys(Keys.ARROW_DOWN);
-		this.buscarAgenciasAppObject.buscarAgenciaPorProximidadePesquisarButton().sendKeys(Keys.ARROW_DOWN);
-		this.buscarAgenciasAppObject.buscarAgenciaPorProximidadePesquisarButton().sendKeys(Keys.ARROW_DOWN);
-		this.buscarAgenciasAppObject.buscarAgenciaPorProximidadePesquisarButton().sendKeys(Keys.ARROW_DOWN);
 		
+					
+		for(int x=1;x<=10;x++)
+		{
+			this.buscarAgenciasAppObject.buscarAgenciaPorProximidadePesquisarButton().sendKeys(Keys.ARROW_DOWN);
+			
+		} /*
+		this.buscarAgenciasAppObject.buscarAgenciaPorProximidadePesquisarButton().sendKeys(Keys.ARROW_DOWN);
+		this.buscarAgenciasAppObject.buscarAgenciaPorProximidadePesquisarButton().sendKeys(Keys.ARROW_DOWN);
+		this.buscarAgenciasAppObject.buscarAgenciaPorProximidadePesquisarButton().sendKeys(Keys.ARROW_DOWN);
+		this.buscarAgenciasAppObject.buscarAgenciaPorProximidadePesquisarButton().sendKeys(Keys.ARROW_DOWN);
+		this.buscarAgenciasAppObject.buscarAgenciaPorProximidadePesquisarButton().sendKeys(Keys.ARROW_DOWN);
+		this.buscarAgenciasAppObject.buscarAgenciaPorProximidadePesquisarButton().sendKeys(Keys.ARROW_DOWN);
+		this.buscarAgenciasAppObject.buscarAgenciaPorProximidadePesquisarButton().sendKeys(Keys.ARROW_DOWN);
+		this.buscarAgenciasAppObject.buscarAgenciaPorProximidadePesquisarButton().sendKeys(Keys.ARROW_DOWN);
+		this.buscarAgenciasAppObject.buscarAgenciaPorProximidadePesquisarButton().sendKeys(Keys.ARROW_DOWN);
+		*/
 	
 	}
 	
