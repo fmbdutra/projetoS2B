@@ -7,29 +7,28 @@ import org.openqa.selenium.WebDriver;
 
 import br.pucrs.framework.Driver;
 import br.pucrs.framework.Report;
-import br.pucrs.verificationPoints.BuscarAgenciaPorProximidadeVerificationPoint;
+import br.pucrs.verificationPoints.BuscarAgenciaPorLocalidadeVerificationPoint;
 
-public class BuscarAgenciasPorProximidadeTestCase {
+public class BuscarAgenciaPorLocalidadeTestCase {
 	private WebDriver driver;
-	private BuscarAgenciaPorProximidadeVerificationPoint buscarAgenciaPorProximidadeVerificationPoint;
+	private BuscarAgenciaPorLocalidadeVerificationPoint buscarAgenciaPorLocalidadeVerificationPoint;
 
 	@Before
 	public void setUp() {
-		Report.startTest("Teste de Busca de Agência(Por Proximidade)");
+		Report.startTest("Teste de Busca de Agência(Por Localidade)");
 
 		driver = Driver.getFirefoxDriver();
 
 		driver.get("http://www.correios.com.br/?set_language=pt-br");
 		driver.manage().window().maximize();
 
-		this.buscarAgenciaPorProximidadeVerificationPoint = new BuscarAgenciaPorProximidadeVerificationPoint(driver);
+		this.buscarAgenciaPorLocalidadeVerificationPoint = new BuscarAgenciaPorLocalidadeVerificationPoint(driver);
 
 	}
 
 	@Test
 	public void main() throws InterruptedException {
-				
-		this.buscarAgenciaPorProximidadeVerificationPoint.checarEnderecoDaAgenciaNoMapa();
+
 	}
 
 	@After

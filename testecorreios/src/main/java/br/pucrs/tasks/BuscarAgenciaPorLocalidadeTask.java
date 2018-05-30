@@ -18,17 +18,19 @@ public class BuscarAgenciaPorLocalidadeTask {
 		this.buscarAgenciasAppObject.getLocalidadeRadialButton().click();
 	}
 	
-	public void selecionarEstado() {
-		this.buscarAgenciasTask.selecionarEstadoComboBox(23);
+	public void selecionarEstado(String estado) {
+		this.buscarAgenciasTask.selecionarEstadoComboBox(estado);
 	}
 	
-	public void selecionarCidade() {
-		this.buscarAgenciasTask.selecionarMunicipioComboBox(400);
+	public void selecionarCidade(String cidade) {
+		this.buscarAgenciasTask.selecionarMunicipioComboBox(cidade);
 	}
 	
-	public void selecionarBairro() {
-		this.buscarAgenciasTask.selecionarBairroComboBox(3);
+	public void selecionarBairro(String bairro) {
+		this.buscarAgenciasTask.selecionarBairroComboBox(bairro);
 	}
+	
+	
 	
 	
 }
