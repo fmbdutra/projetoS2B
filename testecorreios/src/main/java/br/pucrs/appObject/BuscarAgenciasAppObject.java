@@ -11,7 +11,29 @@ public class BuscarAgenciasAppObject {
 			this.driver=driver;
 		}
 		
-		public WebElement
+		public WebElement getHorarioComboBox() {
+			return this.driver.findElement(By.id("selHorario"));
+		}
+		
+		public WebElement getSabadoCheckBox() {
+			return this.driver.findElement(By.xpath("//*[@id=\"divServico\"]/div/fieldset[1]/label[1]"));
+		}
+		
+		public WebElement getDomingoCheckBox() {
+			return this.driver.findElement(By.xpath("//*[@id=\"divServico\"]/div/fieldset[1]/label[2]"));
+		}
+		
+		public WebElement getPlantaoCheckBox() {
+			return this.driver.findElement(By.xpath("//*[@id=\"divServico\"]/div/fieldset[1]/label[3]"));
+		}
+		
+		public WebElement getBancoPostalCheckBox() {
+			return this.driver.findElement(By.xpath("//*[@id=\"divServico\"]/div/fieldset[1]/label[4]"));
+		}
+		
+		public WebElement getCertificadoDigitalCheckBox() {
+			return this.driver.findElement(By.xpath("//*[@id=\"divServico\"]/div/fieldset[1]/label[5]"));
+		}
 		
 		public WebElement getProximidadeRadialButton() {
 			return this.driver.findElement(By.xpath("//*[@id=\"formBuscaAgencia\"]/div/div/div[1]/span[1]"));

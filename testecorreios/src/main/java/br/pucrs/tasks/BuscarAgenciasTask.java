@@ -20,30 +20,19 @@ public class BuscarAgenciasTask {
 		this.homeAppObject.getBuscarAgencia().click();
 	}
 
-	public void selecionarEstadoComboBox(int estado) {
-		int x = 0;
-		do {
-			this.buscarAgenciasAppObject.getEstadoComboBox().sendKeys(Keys.ARROW_DOWN);
-			x++;
-		} while (x == estado); //23
-		this.buscarAgenciasAppObject.getEstadoComboBox().sendKeys(Keys.ENTER);
+	public void selecionarEstadoComboBox(String estado) {
+		this.buscarAgenciasAppObject.getEstadoComboBox().sendKeys(estado);
 	}
 
-	public void selecionarMunicipioComboBox(int municipio) {
-		int y = 0;
-		do {
-			this.buscarAgenciasAppObject.getMunicipioComboBox();
-			y++;
-		} while (y == municipio); //400
-		this.buscarAgenciasAppObject.getMunicipioComboBox().sendKeys(Keys.ENTER);
+	public void selecionarMunicipioComboBox(String municipio) {
+		this.buscarAgenciasAppObject.getMunicipioComboBox().sendKeys(municipio);
 	}
 
-	public void selecionarBairroComboBox(int bairro) {
-		int z = 0;
-		do {
-			this.buscarAgenciasAppObject.getMunicipioComboBox().sendKeys(Keys.ENTER);
-			z++;
-		} while (z == bairro);
-		this.buscarAgenciasAppObject.getMunicipioComboBox().sendKeys(Keys.ENTER);
+	public void selecionarBairroComboBox(String bairro) {
+		this.buscarAgenciasAppObject.getBairroComboBox().sendKeys(bairro);
+	}
+	
+	public void selecionarHorario(String horario) {
+		this.buscarAgenciasAppObject.getHorarioComboBox().sendKeys(horario);
 	}
 }
