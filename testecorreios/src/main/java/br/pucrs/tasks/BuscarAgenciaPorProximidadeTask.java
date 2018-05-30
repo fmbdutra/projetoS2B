@@ -13,19 +13,19 @@ public class BuscarAgenciaPorProximidadeTask {
 	}
 	
 	public void selecionarBuscarAgenciaPorProximidade () {
-		this.buscarAgenciasAppObject.getBuscarAgenciasPorProximidadeRadialButton().click();
+		this.buscarAgenciasAppObject.getProximidadeRadialButton().click();
 	}
 	
 	public void digitarLocalizacao(String endereco) {
-		this.buscarAgenciasAppObject.getBuscarAgenciaPorProximidadeDigiteEnderecoTextField().sendKeys(endereco);		
+		this.buscarAgenciasAppObject.getEnderecoTextField().sendKeys(endereco);		
 	}
 	
 	public void pesquisarLocalizacao() {
-		this.buscarAgenciasAppObject.getBuscarAgenciaPorProximidadePesquisarButton().click();
+		this.buscarAgenciasAppObject.getPesquisarButton().click();
 	}
 	
 	public boolean verificaCarregamentodoMapa() {
-		return this.buscarAgenciasAppObject.getImagemCarregamentoImg().isDisplayed();			
+		return this.buscarAgenciasAppObject.getCarregamentoImg().isDisplayed();			
 	}
 	
 	public void rolarPaginaParaVerificarMapa() {
@@ -33,12 +33,8 @@ public class BuscarAgenciaPorProximidadeTask {
 					
 		for(int x=1;x<=10;x++)
 		{
-			this.buscarAgenciasAppObject.getBuscarAgenciaPorProximidadePesquisarButton().sendKeys(Keys.ARROW_DOWN);
+			this.buscarAgenciasAppObject.getPesquisarButton().sendKeys(Keys.ARROW_DOWN);
 		} 
 	
 	}
-	
-	
-
-
 }
