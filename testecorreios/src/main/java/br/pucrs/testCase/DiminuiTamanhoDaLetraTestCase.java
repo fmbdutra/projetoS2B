@@ -22,8 +22,9 @@ public class DiminuiTamanhoDaLetraTestCase {
 
 		driver = Driver.getFirefoxDriver();
 
-		this.driver.get("http://www.correios.com.br/?set_language=pt-br");
+		driver.get("http://www.correios.com.br/");
 		driver.manage().window().maximize();
+		
 		this.diminuiTamanhoDaLetraVerificationPoint = new DiminuiTamanhoDaLetraVerificationPoint(driver);
 
 		Report.log(Status.INFO, "A página foi carregada", Screenshot.capture(driver));

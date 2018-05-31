@@ -22,8 +22,9 @@ public class VerificarIdiomaInglesTestCase {
 		
 		driver = Driver.getFirefoxDriver();
 		
-		this.driver.get("http://www.correios.com.br/?set_language=pt-br");
+		driver.get("http://www.correios.com.br/");
 		driver.manage().window().maximize();
+		
 		this.verificaIdiomaInglesVerificationPoint = new VerificaIdiomaInglesVerificationPoint(driver);
 		
 		Report.log(Status.INFO, "A página foi carregada", Screenshot.capture(driver));

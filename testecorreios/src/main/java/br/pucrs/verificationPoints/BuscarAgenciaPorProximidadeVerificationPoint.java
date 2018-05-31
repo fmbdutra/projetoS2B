@@ -51,7 +51,6 @@ public class BuscarAgenciaPorProximidadeVerificationPoint {
 		
 
 		Report.log(Status.WARNING, "Verificar no captura de tela", Screenshot.capture(driver));
-		//Report.log(Status.WARNING, "Verificar no captura de tela", "**\\testecorreios\\reports\\screenshots\\*screenshot");
 
 	}
 

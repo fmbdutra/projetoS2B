@@ -18,8 +18,8 @@ public class BuscarAgenciaPorProximidadeTestCase {
 		Report.startTest("Teste de Busca de Agência(Por Proximidade)");
 
 		driver = Driver.getFirefoxDriver();
-
-		driver.get("http://www.correios.com.br/?set_language=pt-br");
+		
+		driver.get("http://www.correios.com.br/");
 		driver.manage().window().maximize();
 
 		this.buscarAgenciaPorProximidadeVerificationPoint = new BuscarAgenciaPorProximidadeVerificationPoint(driver);

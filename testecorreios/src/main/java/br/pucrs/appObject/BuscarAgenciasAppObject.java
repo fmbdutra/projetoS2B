@@ -16,7 +16,11 @@ public class BuscarAgenciasAppObject {
 		}
 		
 		public WebElement getServicoRadialButton() {
-			return this.driver.findElement(By.xpath("//*[@id=\"formBuscaAgencia\"]/div/div/div[1]/span[3]/label"));
+			return this.driver.findElement(By.xpath("//*[@id=\"formBuscaAgencia\"]/div/div/div[1]/span[3]"));
+		}
+		
+		public WebElement getLocalidadeRadialButton() {
+			return this.driver.findElement(By.xpath("//*[@id=\"formBuscaAgencia\"]/div/div/div[1]/span[2]"));
 		}
 		
 		public WebElement getEstadoComboBox() {
@@ -47,7 +51,4 @@ public class BuscarAgenciasAppObject {
 			return this.driver.findElement(By.id("imgPesquisaMap"));
 		}
 		
-		public WebElement getLocalidadeRadialButton() {
-			return this.driver.findElement(By.xpath("//*[@id=\"formBuscaAgencia\"]/div/div/div[1]/span[2]"));
-		}
 }
