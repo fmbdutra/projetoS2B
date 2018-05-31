@@ -1,5 +1,10 @@
 package br.pucrs.tasks;
 
+import javax.xml.soap.SOAPElement;
+
+import org.openqa.selenium.support.ui.Select;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
@@ -20,30 +25,19 @@ public class BuscarAgenciasTask {
 		this.homeAppObject.getBuscarAgencia().click();
 	}
 	
-/*
-	public void selecionarEstadoComboBox() {
-		this.buscarAgenciasAppObject.getEstadoComboBox();
-	}
-
-	public void selecionarMunicipioComboBox() {
-		this.buscarAgenciasAppObject.getMunicipioComboBox();
-	}
-
-	public void selecionarBairroComboBox() {
-		this.buscarAgenciasAppObject.getBairroComboBox();
-	}
-	*/
+	public void selecionarMunicipioComboBoxJAVA() {
 		
-
+		Select municipio = new Select(this.buscarAgenciasAppObject.getMunicipioComboBox());
+		municipio.selectByVisibleText("PORTO ALEGRE");
+	}
+	
 	public void selecionarEstadoComboBox(int estado) throws InterruptedException {
 		int x = 0;
-		
-		//this.buscarAgenciasAppObject.getEstadoComboBox().click();
 		
 		do {
 
 			this.buscarAgenciasAppObject.getEstadoComboBox().sendKeys(Keys.ARROW_DOWN);
-			Thread.sleep(100);
+			Thread.sleep(300);
 			x++;
 			
 		} while (x <= estado); // 23
@@ -51,14 +45,13 @@ public class BuscarAgenciasTask {
 		this.buscarAgenciasAppObject.getEstadoComboBox().sendKeys(Keys.ENTER);
 	}
 
-	public void selecionarMunicipioComboBox(int municipio) {
+	public void selecionarMunicipioComboBox(int municipio) throws InterruptedException {
 		int y = 0;
-		
-		//this.buscarAgenciasAppObject.getMunicipioComboBox().click();
 		
 		do {
 			this.buscarAgenciasAppObject.getMunicipioComboBox().sendKeys(Keys.ARROW_DOWN);
-			y++;		
+			y++;
+			Thread.sleep(300);
 		} while (y < municipio); // 400
 		
 		this.buscarAgenciasAppObject.getMunicipioComboBox().sendKeys(Keys.ENTER);

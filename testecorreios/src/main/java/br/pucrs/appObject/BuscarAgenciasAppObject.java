@@ -51,4 +51,8 @@ public class BuscarAgenciasAppObject {
 			return this.driver.findElement(By.id("imgPesquisaMap"));
 		}
 		
+		public WebElement getPrimeiroAgenciaDaBuscaLink() {
+			return this.driver.findElement(By.id("detalheAgencia1"));
+		}
+		
 }

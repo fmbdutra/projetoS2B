@@ -23,10 +23,13 @@ public class BuscarAgenciaPorProximidadeVerificationPoint {
 	}
 
 	public void checarEnderecoDaAgenciaNoMapa() throws InterruptedException {
+		
 		this.buscarAgenciasTask.apertarBotaoBuscarAgencia();
-
+		Report.log(Status.INFO, "Entrou Na Página Inicial dos Correios");
+		
 		this.buscarAgenciaPorProximidadeTask.selecionarProximidadeRadialButton();
-
+		Report.log(Status.INFO, "Entrou na Página De 'Busca de Agências'");
+		
 		Report.log(Status.INFO, "Buscar Agências Por Proximidade Foi Selecionado");
 		String enderecoBuscado = "Rodovia RS 118, 11800 - Maria Regina, Alvorada - RS, 94834-670";
 
@@ -35,8 +38,6 @@ public class BuscarAgenciaPorProximidadeVerificationPoint {
 
 		this.buscarAgenciaPorProximidadeTask.pesquisarLocalizacao();
 		Report.log(Status.INFO, "O Botão 'Pesquisar' foi Pressionado");
-
-		Report.log(Status.INFO, "A Marcação Deve Exibir a Agência Mais Próxima do Endereço Pesquisado");
 
 		while (this.buscarAgenciaPorProximidadeTask.verificaCarregamentodoMapa()==false) {
 
@@ -48,9 +49,8 @@ public class BuscarAgenciaPorProximidadeVerificationPoint {
 		
 		this.buscarAgenciaPorProximidadeTask.rolarPaginaParaVerificarMapa();
 				
-		
 
-		Report.log(Status.WARNING, "Verificar no captura de tela", Screenshot.capture(driver));
+		Report.log(Status.INFO, "O Mapa Deve Ter Marcação Exibindo Localização Da Agência Mais Próxima do Endereço Pesquisado",Screenshot.capture(driver));
 
 	}
 

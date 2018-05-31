@@ -5,7 +5,8 @@ import org.openqa.selenium.WebDriver;
 import br.pucrs.appObject.BuscarAgenciasAppObject;
 
 public class BuscarAgenciaPorLocalidadeTask {
-
+	
+	
 	private BuscarAgenciasAppObject buscarAgenciasAppObject;
 	private BuscarAgenciasTask buscarAgenciasTask;
 
@@ -22,8 +23,12 @@ public class BuscarAgenciaPorLocalidadeTask {
 		this.buscarAgenciasTask.selecionarEstadoComboBox(estado);
 	}
 
-	public void selecionarMunicipio(int municipio) {
+	public void selecionarMunicipio(int municipio) throws InterruptedException {
 		this.buscarAgenciasTask.selecionarMunicipioComboBox(municipio);
+	}
+	
+	public void verificaExibiuAgencias() {
+		this.buscarAgenciasAppObject.getPrimeiroAgenciaDaBuscaLink().click();
 	}
 
 
