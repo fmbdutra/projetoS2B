@@ -10,29 +10,10 @@ public class BuscarAgenciasAppObject {
 		public BuscarAgenciasAppObject(WebDriver driver) {
 			this.driver=driver;
 		}
+
 		
 		public WebElement getProximidadeRadialButton() {
 			return this.driver.findElement(By.xpath("//*[@id=\"formBuscaAgencia\"]/div/div/div[1]/span[1]"));
-		}
-		
-		public WebElement getServicoRadialButton() {
-			return this.driver.findElement(By.xpath("//*[@id=\"formBuscaAgencia\"]/div/div/div[1]/span[3]"));
-		}
-		
-		public WebElement getLocalidadeRadialButton() {
-			return this.driver.findElement(By.xpath("//*[@id=\"formBuscaAgencia\"]/div/div/div[1]/span[2]"));
-		}
-		
-		public WebElement getEstadoComboBox() {
-			return this.driver.findElement(By.id("estadoAgencia"));
-		}
-		
-		public WebElement getMunicipioComboBox() {
-			return this.driver.findElement(By.id("municipioAgencia"));
-		}
-		
-		public WebElement getBairroComboBox() {
-			return this.driver.findElement(By.id("bairroAgencia"));
 		}
 		
 		public WebElement getPesquisarButton() {
@@ -50,9 +31,55 @@ public class BuscarAgenciasAppObject {
 		public WebElement getCarregamentoImg() {
 			return this.driver.findElement(By.id("imgPesquisaMap"));
 		}
+
 		
-		public WebElement getPrimeiroAgenciaDaBuscaLink() {
-			return this.driver.findElement(By.id("detalheAgencia1"));
+		public WebElement getLocalidadeRadialButton() {
+			return this.driver.findElement(By.xpath("//*[@id=\"formBuscaAgencia\"]/div/div/div[1]/span[2]"));
 		}
 		
+		public WebElement getEstadoComboBox() {
+			return this.driver.findElement(By.id("estadoAgencia"));
+		}
+		
+		public WebElement getMunicipioComboBox() {
+			return this.driver.findElement(By.id("municipioAgencia"));
+		}
+		
+		public WebElement getBairroComboBox() {
+			return this.driver.findElement(By.id("bairroAgencia"));
+		}
+		
+		public WebElement getServicoRadialButton() {
+			return this.driver.findElement(By.xpath("//*[@id=\"formBuscaAgencia\"]/div/div/div[1]/span[3]"));
+		}
+		
+		public WebElement getHorarioComboBox() {
+			return this.driver.findElement(By.id("selHorario"));
+		}
+		
+		public WebElement getSabadoCheckBox() {
+			return this.driver.findElement(By.xpath("//*[@id=\"divServico\"]/div/fieldset[1]/label[1]"));
+		}
+		
+		public WebElement getDomingoCheckBox() {
+			return this.driver.findElement(By.xpath("//*[@id=\"divServico\"]/div/fieldset[1]/label[2]"));
+		}
+		
+		public WebElement getPlantaoCheckBox() {
+			return this.driver.findElement(By.xpath("//*[@id=\"divServico\"]/div/fieldset[1]/label[3]"));
+		}
+		
+		public WebElement getBancoPostalCheckBox() {
+			return this.driver.findElement(By.xpath("//*[@id=\"divServico\"]/div/fieldset[1]/label[4]"));
+		}
+		
+		public WebElement getCertificadoDigitalCheckBox() {
+			return this.driver.findElement(By.xpath("//*[@id=\"divServico\"]/div/fieldset[1]/label[5]"));
+		}
+				
+		public WebElement getPrimeiroAgenciaDaBuscaLink() {
+			//return this.driver.findElement(By.xpath("//*[@id=\"tableNomeAgencia\"]/tbody/tr/td[1]"));
+			
+			return this.driver.findElement(By.cssSelector("#tableNomeAgencia > tbody > tr > td.bullet.ageNomeEvent.nomeAgencia > a")); 
+		}		
 }

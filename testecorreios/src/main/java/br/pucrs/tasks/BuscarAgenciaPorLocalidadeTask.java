@@ -18,7 +18,7 @@ public class BuscarAgenciaPorLocalidadeTask {
 	public void selecionarBuscarAgenciaPorLocalidade() {
 		this.buscarAgenciasAppObject.getLocalidadeRadialButton().click();
 	}
-
+/*
 	public void selecionarEstado(int estado) throws InterruptedException {
 		this.buscarAgenciasTask.selecionarEstadoComboBox(estado);
 	}
@@ -26,15 +26,33 @@ public class BuscarAgenciaPorLocalidadeTask {
 	public void selecionarMunicipio(int municipio) throws InterruptedException {
 		this.buscarAgenciasTask.selecionarMunicipioComboBox(municipio);
 	}
+*/	
+	public void selecionarBairro(int bairro) throws InterruptedException {
+		this.buscarAgenciasTask.selecionarBairroComboBox(bairro);
+	}
+
+
+	public void selecionarEstado(String estado) {
+		this.buscarAgenciasTask.selecionarEstadoComboBoxJs(estado);
+	}
+
+	public void selecionarMunicipio(String municipio) {
+		this.buscarAgenciasTask.selecionarMunicipioComboBoxJs(municipio);
+	}
+	
+	/*
+	public void selecionarBairro(String bairro) {
+		this.buscarAgenciasTask.selecionarBairroComboBoxJs(bairro);
+	}
+	*/	
 	
 	public void verificaExibiuAgencias() {
 		this.buscarAgenciasAppObject.getPrimeiroAgenciaDaBuscaLink().click();
 	}
 
 
-	public void selecionarBairro(int bairro) {
-		this.buscarAgenciasTask.selecionarBairroComboBox(bairro);
-	}
+
+	
 }
 
 

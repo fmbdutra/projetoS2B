@@ -26,6 +26,10 @@ public class BuscarAgenciaPorLocalidadeVerificationPoint {
 
 	public void checarBuscaporLocalidade() throws InterruptedException {
 
+		String 	estado    = "RIO GRANDE DO SUL", 
+				municipio = "PORTO ALEGRE", 
+				bairro    = "CRISTO REDENTOR                         ";
+		
 		this.buscarAgenciasTask.apertarBotaoBuscarAgencia();
 		Report.log(Status.INFO, "Entrou Na Página Inicial dos Correios");
 
@@ -33,21 +37,29 @@ public class BuscarAgenciaPorLocalidadeVerificationPoint {
 		Report.log(Status.INFO, "Entrou na Página De 'Busca de Agências'");
 
 		Report.log(Status.INFO, "Buscar Agências Por Localização Foi Selecionado");
-		this.buscarAgenciaPorLocalidadeTask.selecionarEstado(22);
-
-		Report.log(Status.INFO, "Selecionado Estado do Rio Grande do Sul");
-
-		//this.buscarAgenciaPorLocalidadeTask.selecionarMunicipio(327);
-		this.buscarAgenciasTask.selecionarMunicipioComboBoxJAVA();
+		this.buscarAgenciaPorLocalidadeTask.selecionarEstado(estado);
 		
+		Thread.sleep(1000);
 		
-		Report.log(Status.INFO, "Selecionado Municipio de Porto Alegre");
+		Report.log(Status.INFO, "Selecionado Estado "+estado);
 
-		this.buscarAgenciaPorLocalidadeTask.selecionarBairro(11);
-		Report.log(Status.INFO, "Selecionado Bairro Cristo Redentor");
+		
+		this.buscarAgenciaPorLocalidadeTask.selecionarMunicipio(municipio);
+			
+		
+		Report.log(Status.INFO, "Selecionado Município de "+municipio);
 
+		Thread.sleep(1000);
+		this.buscarAgenciaPorLocalidadeTask.selecionarBairro(9);
+		Report.log(Status.INFO, "Selecionado Bairro "+bairro);
+
+		
+		Thread.sleep(3000);
+		
 		this.buscarAgenciaPorLocalidadeTask.verificaExibiuAgencias();
-
+		
+		Thread.sleep(2600);
+		
 		
 		assertTrue(this.driver.getPageSource().contains("Bairro: Cristo Redentor"));
 
