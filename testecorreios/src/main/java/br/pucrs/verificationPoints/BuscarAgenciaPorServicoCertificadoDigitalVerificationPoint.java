@@ -7,45 +7,44 @@ import org.openqa.selenium.WebDriver;
 
 import com.aventstack.extentreports.Status;
 
+import br.pucrs.appObject.BuscarAgenciasAppObject;
 import br.pucrs.framework.Report;
 import br.pucrs.framework.Screenshot;
-import br.pucrs.tasks.BuscarAgenciaPorServicoCertificadoDigitalTask;
-import br.pucrs.tasks.BuscarAgenciaPorServicoDomingoBancoPostalTask;
 import br.pucrs.tasks.BuscarAgenciasTask;
 
 public class BuscarAgenciaPorServicoCertificadoDigitalVerificationPoint {
 	private WebDriver driver;
 	
 	private BuscarAgenciasTask buscarAgenciasTask;
-	private BuscarAgenciaPorServicoCertificadoDigitalTask buscarAgenciaPorServicoCertificadoDigitalTask;
+	private BuscarAgenciasAppObject buscarAgenciasAppObject;
 	
 	public BuscarAgenciaPorServicoCertificadoDigitalVerificationPoint (WebDriver driver) {
+		this.buscarAgenciasAppObject = new BuscarAgenciasAppObject(driver);
 		this.driver = driver;
 		this.buscarAgenciasTask = new BuscarAgenciasTask(driver);
-		this.buscarAgenciaPorServicoCertificadoDigitalTask = new BuscarAgenciaPorServicoCertificadoDigitalTask(driver);
 	}
 	
 	public void checarBuscaDeAgenciaCertificadoDigital() {
 		this.buscarAgenciasTask.apertarBotaoBuscarAgencia();
 		Report.log(Status.INFO, "Buscar Agências Por Servico Foi Selecionado");
 		
-		this.buscarAgenciaPorServicoCertificadoDigitalTask.selecionarServicoRadioButton();
+		this.buscarAgenciasAppObject.getServicoRadialButton().click();
 		Report.log(Status.INFO, "Buscar Agências Por Servico Foi Selecionado");
 		
 		//PASSAR XPATH POR PARAMETRO
-		this.buscarAgenciaPorServicoCertificadoDigitalTask.selecionarEstadoComboBox("//*[@id=\"estadoAgencia\"]/option[24]");
+		this.buscarAgenciasTask.selecionarEstadoComboBox("//*[@id=\"estadoAgencia\"]/option[24]");
 		Report.log(Status.INFO, "O Estado Rio Grande do Sul Foi Selecionado");
 		
-		this.buscarAgenciaPorServicoCertificadoDigitalTask.selecionarMunicipioComboBox("//*[@id=\"municipioAgencia\"]/option[327]");
+		this.buscarAgenciasTask.selecionarMunicipioComboBox("//*[@id=\"municipioAgencia\"]/option[327]");
 		Report.log(Status.INFO, "O Município Porto Alegre Foi Selecionado");
 		
-		this.buscarAgenciaPorServicoCertificadoDigitalTask.seleionarBairroComboBox("//*[@id=\"bairroAgencia\"]/option[8]");
+		this.buscarAgenciasTask.selecionarBairroComboBox("//*[@id=\"bairroAgencia\"]/option[8]");
 		Report.log(Status.INFO, "O Bairro Centro Histórico Foi Selecionado");
 		
-		this.buscarAgenciaPorServicoCertificadoDigitalTask.selecionarHorarioComboBox("//*[@id=\"selHorario\"]/option[12]");
+		this.buscarAgenciasTask.selecionarHorario("//*[@id=\"selHorario\"]/option[12]");
 		Report.log(Status.INFO, "O Horário de 10:00 Foi Selecionado");
 		
-		this.buscarAgenciaPorServicoCertificadoDigitalTask.selecionarAtendimentoCheckBox();
+		this.buscarAgenciasTask.selecionarAtendimentoCertificadoDigital();
 		Report.log(Status.INFO, "A Opção Certificado Digital Foi Selecionada");
 		
 		int size = driver.findElements(By.id("tableNomeAgencia") ).size();

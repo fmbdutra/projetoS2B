@@ -7,44 +7,47 @@ import org.openqa.selenium.WebDriver;
 
 import com.aventstack.extentreports.Status;
 
+import br.pucrs.appObject.BuscarAgenciasAppObject;
 import br.pucrs.framework.Report;
 import br.pucrs.framework.Screenshot;
-import br.pucrs.tasks.BuscarAgenciaPorServicoPlantaoBancoPostalTask;
 import br.pucrs.tasks.BuscarAgenciasTask;
 
 public class BuscarAgenciaPorServicoPlantaoBancoPostalVerificationPoint {
 	private WebDriver driver;
 	
 	private BuscarAgenciasTask buscarAgenciasTask;
-	private BuscarAgenciaPorServicoPlantaoBancoPostalTask buscarAgenciaPorServicoPlantaoBancoPostalTask;
+	//private BuscarAgenciaPorServicoPlantaoBancoPostalTask buscarAgenciaPorServicoPlantaoBancoPostalTask;
+	private BuscarAgenciasAppObject buscarAgenciasAppObject;
 	
 	public BuscarAgenciaPorServicoPlantaoBancoPostalVerificationPoint(WebDriver driver) {
 		this.driver = driver;
 		this.buscarAgenciasTask = new BuscarAgenciasTask(driver);
-		this.buscarAgenciaPorServicoPlantaoBancoPostalTask = new BuscarAgenciaPorServicoPlantaoBancoPostalTask(driver);
+		//this.buscarAgenciaPorServicoPlantaoBancoPostalTask = new BuscarAgenciaPorServicoPlantaoBancoPostalTask(driver);
+		this.buscarAgenciasAppObject = new BuscarAgenciasAppObject(driver);
 	}
 	
 	public void checarBusacaAgenciaPlantaoBancoPostal() {
 		this.buscarAgenciasTask.apertarBotaoBuscarAgencia();
 		Report.log(Status.INFO, "Buscar Agências Por Servico Foi Selecionado");
 		
-		this.buscarAgenciaPorServicoPlantaoBancoPostalTask.selecionarServicoRadioButton();
+		this.buscarAgenciasAppObject.getServicoRadialButton().click();
 		Report.log(Status.INFO, "Buscar Agências Por Servico Foi Selecionado");
 		
 		//PASSAR XPATH POR PARAMETRO
-		this.buscarAgenciaPorServicoPlantaoBancoPostalTask.selecionarEstadoComboBox("//*[@id=\"estadoAgencia\"]/option[24]");
+		this.buscarAgenciasTask.selecionarEstadoComboBox("//*[@id=\"estadoAgencia\"]/option[24]");
 		Report.log(Status.INFO, "O Estado Rio Grande do Sul Foi Selecionado");
 		
-		this.buscarAgenciaPorServicoPlantaoBancoPostalTask.selecionarMunicipioComboBox("//*[@id=\"municipioAgencia\"]/option[327]");
+		this.buscarAgenciasTask.selecionarMunicipioComboBox("//*[@id=\"municipioAgencia\"]/option[327]");
 		Report.log(Status.INFO, "O Município Porto Alegre Foi Selecionado");
 		
-		this.buscarAgenciaPorServicoPlantaoBancoPostalTask.seleionarBairroComboBox("//*[@id=\"bairroAgencia\"]/option[8]");
+		this.buscarAgenciasTask.selecionarBairroComboBox("//*[@id=\"bairroAgencia\"]/option[8]");
 		Report.log(Status.INFO, "O Bairro Centro Histórico Foi Selecionado");
 		
-		this.buscarAgenciaPorServicoPlantaoBancoPostalTask.selecionarHorarioComboBox("//*[@id=\"selHorario\"]/option[12]");
+		this.buscarAgenciasTask.selecionarHorario("//*[@id=\"selHorario\"]/option[12]");
 		Report.log(Status.INFO, "O Horário de 10:00 Foi Selecionado");
 		
-		this.buscarAgenciaPorServicoPlantaoBancoPostalTask.selecionarAtendimentoCheckBox();
+		this.buscarAgenciasTask.selecionarAtendimentoPlantao();
+		this.buscarAgenciasTask.selecionarAtendimentoBancoPostal();
 		Report.log(Status.INFO, "As Opções de Plantao e Banco Postal Foram Selecionadas");
 		
 		int size = driver.findElements(By.id("tableNomeAgencia") ).size();
