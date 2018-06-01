@@ -9,7 +9,7 @@ import br.pucrs.framework.Driver;
 import br.pucrs.framework.Report;
 import br.pucrs.verificationPoints.BuscarAgenciaPorProximidadeVerificationPoint;
 
-public class BuscarAgenciasPorProximidadeTestCase {
+public class BuscarAgenciaPorProximidadeTestCase {
 	private WebDriver driver;
 	private BuscarAgenciaPorProximidadeVerificationPoint buscarAgenciaPorProximidadeVerificationPoint;
 
@@ -18,8 +18,8 @@ public class BuscarAgenciasPorProximidadeTestCase {
 		Report.startTest("Teste de Busca de Agência(Por Proximidade)");
 
 		driver = Driver.getFirefoxDriver();
-
-		driver.get("http://www.correios.com.br/?set_language=pt-br");
+		
+		driver.get("http://www.correios.com.br/");
 		driver.manage().window().maximize();
 
 		this.buscarAgenciaPorProximidadeVerificationPoint = new BuscarAgenciaPorProximidadeVerificationPoint(driver);
