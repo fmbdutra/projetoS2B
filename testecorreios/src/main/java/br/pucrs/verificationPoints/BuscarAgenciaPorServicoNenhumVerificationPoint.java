@@ -3,7 +3,6 @@ package br.pucrs.verificationPoints;
 import static org.junit.Assert.assertEquals;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
 import com.aventstack.extentreports.Status;

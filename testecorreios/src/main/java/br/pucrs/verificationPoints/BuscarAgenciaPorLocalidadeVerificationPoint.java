@@ -37,7 +37,7 @@ public class BuscarAgenciaPorLocalidadeVerificationPoint {
 		// municipio = "PORTO ALEGRE",
 		// bairro = "CRISTO REDENTOR ";
 
-		this.homeAppObject.getBuscarAgencia().click();
+		this.homeAppObject.getBuscarAgenciaButton().click();
 		Report.log(Status.INFO, "Entrou Na Página Inicial dos Correios");
 
 		this.buscarAgenciasAppObject.getLocalidadeRadialButton().click();

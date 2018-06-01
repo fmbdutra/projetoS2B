@@ -36,8 +36,12 @@ public class HomeAppObject {
 		return this.driver.findElement(By.xpath("//*[@id=\"rastreamento-obj\"]/form/div[1]/label/strong"));
 	}
 
-	public WebElement getBuscarAgencia() {
+	public WebElement getBuscarAgenciaButton() {
 		return this.driver.findElement(By.cssSelector("#content-servicos > ul > li:nth-child(5) > div.acao > a"));
+	}
+	
+	public WebElement getContrasteButton() {
+		return this.driver.findElement(By.id("txt-contraste"));		
 	}
 
 }

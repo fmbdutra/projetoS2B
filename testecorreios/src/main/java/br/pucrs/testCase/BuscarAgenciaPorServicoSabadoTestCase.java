@@ -11,7 +11,6 @@ import br.pucrs.framework.Driver;
 import br.pucrs.framework.Report;
 import br.pucrs.framework.Screenshot;
 import br.pucrs.verificationPoints.BuscarAgenciaPorServicoSabadoVerificationPoint;
-import br.pucrs.verificationPoints.BuscarAgenciaPorServicoTodosVerificationPoint;
 
 public class BuscarAgenciaPorServicoSabadoTestCase {
 	
