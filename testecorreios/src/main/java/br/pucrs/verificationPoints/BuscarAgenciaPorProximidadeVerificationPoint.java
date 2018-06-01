@@ -43,7 +43,7 @@ public class BuscarAgenciaPorProximidadeVerificationPoint {
 
 		Thread.sleep(2000);
 
-		this.buscarAgenciasTask.rolarPaginaParaVerificarMapa();
+		this.buscarAgenciasTask.rolarPaginaParaVerificarResultado();
 
 		Report.log(Status.INFO,
 				"O Mapa Deve Ter Marcação Exibindo Localização Da Agência Mais Próxima do Endereço Pesquisado",

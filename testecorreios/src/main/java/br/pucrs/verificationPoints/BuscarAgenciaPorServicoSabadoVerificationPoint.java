@@ -12,19 +12,19 @@ import br.pucrs.framework.Report;
 import br.pucrs.framework.Screenshot;
 import br.pucrs.tasks.BuscarAgenciasTask;
 
-public class BuscarAgenciaPorServicoPlantaoBancoPostalVerificationPoint {
+public class BuscarAgenciaPorServicoSabadoVerificationPoint {
+	
 	private WebDriver driver;
-
+	private BuscarAgenciasAppObject buscarAgenciasAppObject;	
 	private BuscarAgenciasTask buscarAgenciasTask;
-	private BuscarAgenciasAppObject buscarAgenciasAppObject;
 
-	public BuscarAgenciaPorServicoPlantaoBancoPostalVerificationPoint(WebDriver driver) {
+	public BuscarAgenciaPorServicoSabadoVerificationPoint(WebDriver driver) {
+		this.buscarAgenciasAppObject = new BuscarAgenciasAppObject(driver);
 		this.driver = driver;
 		this.buscarAgenciasTask = new BuscarAgenciasTask(driver);
-		this.buscarAgenciasAppObject = new BuscarAgenciasAppObject(driver);
 	}
 
-	public void checarBusacaAgenciaPlantaoBancoPostal() throws InterruptedException {
+	public void checarBuscaDeAgenciaSabado() throws InterruptedException {
 		this.buscarAgenciasTask.apertarBotaoBuscarAgencia();
 		Report.log(Status.INFO, "Buscar Agências Por Servico Foi Selecionado");
 
@@ -40,27 +40,30 @@ public class BuscarAgenciaPorServicoPlantaoBancoPostalVerificationPoint {
 
 		this.buscarAgenciasTask.selecionarBairroComboBox("//*[@id=\"bairroAgencia\"]/option[8]");
 		Report.log(Status.INFO, "O Bairro Centro Histórico Foi Selecionado");
+		
+		this.buscarAgenciasTask.clicarNoBody();		
+		this.buscarAgenciasTask.rolarPaginaParaVerificarResultado();		
+		Thread.sleep(1300);	
+		Report.log(Status.INFO, "Exibido Agências Localizadas no Bairro Centro Histórico", Screenshot.capture(driver));
 
+		this.buscarAgenciasTask.selecionarAtendimentoSabado();
+		Report.log(Status.INFO, "O Atendimento Sábado Foi Selecionado");
+		
 		this.buscarAgenciasTask.selecionarHorario("//*[@id=\"selHorario\"]/option[12]");
 		Report.log(Status.INFO, "O Horário de 10:00 Foi Selecionado");
-
-		this.buscarAgenciasTask.selecionarAtendimentoPlantao();
-		this.buscarAgenciasTask.selecionarAtendimentoBancoPostal();
-		Report.log(Status.INFO, "As Opções de Plantao e Banco Postal Foram Selecionadas");
+				
+		this.buscarAgenciasTask.clicarNoBody();		
+		this.buscarAgenciasTask.rolarPaginaParaVerificarResultado();		
+		Thread.sleep(1300);		
 		
-		this.buscarAgenciasTask.clicarNoBody();
-		
-		this.buscarAgenciasTask.rolarPaginaParaVerificarResultado();
-		
-		Thread.sleep(1000);	
-
 		int size = driver.findElements(By.id("tableNomeAgencia")).size();
-		if (size != 0) {
-			Report.log(Status.FAIL, "O Teste Não Deve Retornar Nenhum Resultado", Screenshot.capture(driver));
+		if (size < 2) {
+			Report.log(Status.FAIL, "O Teste Não Retornou Resultados Das Agências que Abrem Aos Sábados No Bairro Centro Histórico", Screenshot.capture(driver));
 		} else {
-			Report.log(Status.PASS, "O Teste Foi Executado e Nenhum Resultado Foi Retornado",
-					Screenshot.capture(driver));
+			Report.log(Status.PASS, "O Teste Foi Executado e Foi Apresentada As Duas Agências Que Abrem Sábado No Centro Histórico", Screenshot.capture(driver));
 		}
-		assertEquals(0, size);
+		assertEquals(2, size); //Pois abrem apenas 2 agências ao sábado no Bairro Centro Histórico
+		
 	}
+
 }

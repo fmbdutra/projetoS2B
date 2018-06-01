@@ -28,7 +28,7 @@ public class BuscarAgenciaPorServicoDomingoBancoPostalVerificationPoint {
 		this.buscarAgenciasAppObject = new BuscarAgenciasAppObject(driver);
 	}
 
-	public void checarBuscaDeAgenciaDomingoBancoPostal() {
+	public void checarBuscaDeAgenciaDomingoBancoPostal() throws InterruptedException {
 		this.buscarAgenciasTask.apertarBotaoBuscarAgencia();
 		Report.log(Status.INFO, "Buscar Agências Por Servico Foi Selecionado");
 
@@ -49,7 +49,15 @@ public class BuscarAgenciaPorServicoDomingoBancoPostalVerificationPoint {
 		Report.log(Status.INFO, "O Horário de 10:00 Foi Selecionado");
 
 		this.buscarAgenciasTask.selecionarAtendimentoDomingo();
+		
 		this.buscarAgenciasTask.selecionarAtendimentoBancoPostal();
+		
+		this.buscarAgenciasTask.clicarNoBody();
+		
+		this.buscarAgenciasTask.rolarPaginaParaVerificarResultado();
+		
+		Thread.sleep(1000);	
+		
 		Report.log(Status.INFO, "As Opções de Domingo e Banco Postal Foram Selecionadas");
 
 		int size = driver.findElements(By.id("tableNomeAgencia")).size();

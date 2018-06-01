@@ -32,7 +32,7 @@ public class BuscarAgenciaPorServicoPlantaoBancoPostalTestCase {
 	}
 
 	@Test
-	public void main() {
+	public void main() throws InterruptedException {
 		this.buscarAgenciaPorServicoPlantaoBancoPostalVerificationPoint.checarBusacaAgenciaPlantaoBancoPostal();
 	}
 

@@ -3,6 +3,7 @@ package br.pucrs.verificationPoints;
 import static org.junit.Assert.assertEquals;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
 import com.aventstack.extentreports.Status;
@@ -12,19 +13,20 @@ import br.pucrs.framework.Report;
 import br.pucrs.framework.Screenshot;
 import br.pucrs.tasks.BuscarAgenciasTask;
 
-public class BuscarAgenciaPorServicoPlantaoBancoPostalVerificationPoint {
+public class BuscarAgenciaPorServicoNenhumVerificationPoint {
+
 	private WebDriver driver;
 
 	private BuscarAgenciasTask buscarAgenciasTask;
 	private BuscarAgenciasAppObject buscarAgenciasAppObject;
 
-	public BuscarAgenciaPorServicoPlantaoBancoPostalVerificationPoint(WebDriver driver) {
+	public BuscarAgenciaPorServicoNenhumVerificationPoint(WebDriver driver) {
+		this.buscarAgenciasAppObject = new BuscarAgenciasAppObject(driver);
 		this.driver = driver;
 		this.buscarAgenciasTask = new BuscarAgenciasTask(driver);
-		this.buscarAgenciasAppObject = new BuscarAgenciasAppObject(driver);
 	}
 
-	public void checarBusacaAgenciaPlantaoBancoPostal() throws InterruptedException {
+	public void checarBuscaDeAgenciaNenhum() throws InterruptedException {
 		this.buscarAgenciasTask.apertarBotaoBuscarAgencia();
 		Report.log(Status.INFO, "Buscar Agências Por Servico Foi Selecionado");
 
@@ -43,24 +45,22 @@ public class BuscarAgenciaPorServicoPlantaoBancoPostalVerificationPoint {
 
 		this.buscarAgenciasTask.selecionarHorario("//*[@id=\"selHorario\"]/option[12]");
 		Report.log(Status.INFO, "O Horário de 10:00 Foi Selecionado");
-
-		this.buscarAgenciasTask.selecionarAtendimentoPlantao();
-		this.buscarAgenciasTask.selecionarAtendimentoBancoPostal();
-		Report.log(Status.INFO, "As Opções de Plantao e Banco Postal Foram Selecionadas");
 		
 		this.buscarAgenciasTask.clicarNoBody();
 		
 		this.buscarAgenciasTask.rolarPaginaParaVerificarResultado();
 		
-		Thread.sleep(1000);	
-
+		Thread.sleep(1000);		
+		
 		int size = driver.findElements(By.id("tableNomeAgencia")).size();
-		if (size != 0) {
-			Report.log(Status.FAIL, "O Teste Não Deve Retornar Nenhum Resultado", Screenshot.capture(driver));
+		if (size < 10) {
+			Report.log(Status.FAIL, "O Teste Não Retornou Resultados das Agências do Bairro Centro Histórico", Screenshot.capture(driver));
 		} else {
-			Report.log(Status.PASS, "O Teste Foi Executado e Nenhum Resultado Foi Retornado",
+			Report.log(Status.PASS, "O Teste Foi Executado e Foi Apresentada Todas Agências do Bairro Centro Histórico",
 					Screenshot.capture(driver));
 		}
-		assertEquals(0, size);
+		assertEquals(10, size); //Exibe todas as agências no bairro Centro Histórico que são 10 no total
 	}
+
+	
 }
