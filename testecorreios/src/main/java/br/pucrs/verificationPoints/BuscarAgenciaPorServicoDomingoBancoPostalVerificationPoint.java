@@ -1,0 +1,58 @@
+package br.pucrs.verificationPoints;
+
+import static org.junit.Assert.assertEquals;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+import com.aventstack.extentreports.Status;
+
+import br.pucrs.framework.Report;
+import br.pucrs.framework.Screenshot;
+import br.pucrs.tasks.BuscarAgenciaPorServicoDomingoBancoPostalTask;
+import br.pucrs.tasks.BuscarAgenciasTask;
+
+public class BuscarAgenciaPorServicoDomingoBancoPostalVerificationPoint {
+	private WebDriver driver;
+	
+	private BuscarAgenciasTask buscarAgenciasTask;
+	private BuscarAgenciaPorServicoDomingoBancoPostalTask buscarAgenciaPorServicoDomingoBancoPostalTask;
+	
+	public BuscarAgenciaPorServicoDomingoBancoPostalVerificationPoint(WebDriver driver) {
+		this.driver = driver;
+		this.buscarAgenciasTask = new BuscarAgenciasTask(driver);
+		this.buscarAgenciaPorServicoDomingoBancoPostalTask = new BuscarAgenciaPorServicoDomingoBancoPostalTask(driver);
+	}
+	
+	public void checarBuscaDeAgenciaDomingoBancoPostal () {
+		this.buscarAgenciasTask.apertarBotaoBuscarAgencia();
+		Report.log(Status.INFO, "Buscar Agências Por Servico Foi Selecionado");
+		
+		this.buscarAgenciaPorServicoDomingoBancoPostalTask.selecionarServicoRadioButton();
+		Report.log(Status.INFO, "Buscar Agências Por Servico Foi Selecionado");
+		
+		//PASSAR XPATH POR PARAMETRO
+		this.buscarAgenciaPorServicoDomingoBancoPostalTask.selecionarEstadoComboBox("//*[@id=\"estadoAgencia\"]/option[24]");
+		Report.log(Status.INFO, "O Estado Rio Grande do Sul Foi Selecionado");
+		
+		this.buscarAgenciaPorServicoDomingoBancoPostalTask.selecionarMunicipioComboBox("//*[@id=\"municipioAgencia\"]/option[327]");
+		Report.log(Status.INFO, "O Município Porto Alegre Foi Selecionado");
+		
+		this.buscarAgenciaPorServicoDomingoBancoPostalTask.seleionarBairroComboBox("//*[@id=\"bairroAgencia\"]/option[8]");
+		Report.log(Status.INFO, "O Bairro Centro Histórico Foi Selecionado");
+		
+		this.buscarAgenciaPorServicoDomingoBancoPostalTask.selecionarHorarioComboBox("//*[@id=\"selHorario\"]/option[12]");
+		Report.log(Status.INFO, "O Horário de 10:00 Foi Selecionado");
+		
+		this.buscarAgenciaPorServicoDomingoBancoPostalTask.selecionarAtendimentoCheckBox();
+		Report.log(Status.INFO, "As Opções de Domingo e Banco Postal Foram Selecionadas");
+		
+		int size = driver.findElements(By.id("tableNomeAgencia") ).size();
+		if(size != 0) {
+			Report.log(Status.FAIL, "O Teste Não Deve Retornar Nenhum Resultado", Screenshot.capture(driver));
+		} else {
+			Report.log(Status.PASS, "O Teste Foi Executado e Nenhum Resultado Foi Retornado", Screenshot.capture(driver));
+		}
+		assertEquals(0, size);
+	}
+}

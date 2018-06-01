@@ -1,36 +1,39 @@
 package br.pucrs.tasks;
 
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 import br.pucrs.appObject.BuscarAgenciasAppObject;
 
-public class BuscarAgenciaPorServicoTask {
+public class BuscarAgenciaPorServicoCertificadoDigitalTask {
 	private BuscarAgenciasAppObject buscarAgenciasAppObject;
 	private BuscarAgenciasTask buscarAgenciasTask;
-
-	public BuscarAgenciaPorServicoTask(WebDriver driver) {
+	
+	public BuscarAgenciaPorServicoCertificadoDigitalTask(WebDriver driver) {
 		this.buscarAgenciasAppObject = new BuscarAgenciasAppObject(driver);
+		this.buscarAgenciasTask = new BuscarAgenciasTask(driver);
 	}
 	
 	public void selecionarServicoRadioButton() {
 		this.buscarAgenciasAppObject.getServicoRadialButton().click();
 	}
 	
-	public void selecionarEstado(String estado) {
-		this.buscarAgenciasTask.selecionarEstadoComboBox(estado);
+	public void selecionarEstadoComboBox(String estado) {
+		this.buscarAgenciasTask.selecionarEstadoComboBox(estado);;
 	}
 	
-	public void selecionarMunicipio(String municipio) {
+	public void selecionarMunicipioComboBox(String municipio) {
 		this.buscarAgenciasTask.selecionarMunicipioComboBox(municipio);
 	}
 	
-	public void seleionarBairro(String bairro) {
+	public void seleionarBairroComboBox(String bairro) {
 		this.buscarAgenciasTask.selecionarBairroComboBox(bairro);
 	}
 	
-	public void selecionarHorario(String horario) {
+	public void selecionarHorarioComboBox(String horario) {
 		this.buscarAgenciasTask.selecionarHorario(horario);
 	}
-
+	
+	public void selecionarAtendimentoCheckBox() {
+		this.buscarAgenciasTask.selecionarAtendimentoCertificadoDigital();
+	}
 }
