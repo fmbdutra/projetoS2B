@@ -39,5 +39,13 @@ public class HomeAppObject {
 	public WebElement getBuscarAgencia() {
 		return this.driver.findElement(By.cssSelector("#content-servicos > ul > li:nth-child(5) > div.acao > a"));
 	}
+	
+	public WebElement getBuscaCepEndereco() {
+		return this.driver.findElement(By.id("acesso-busca"));
+	}
+	
+	public WebElement getPesquisarCepEnderecoBusca() {
+		return this.driver.findElement(By.xpath("//*[@id=\"content-servicos\"]/ul/li[2]/form/div[2]/input[2]"));
+	}
 
 }
