@@ -32,7 +32,7 @@ public class BuscarAgenciaPorServicoCertificadoDigitalTestCase {
 	}
 
 	@Test
-	public void main() {
+	public void main() throws InterruptedException {
 		this.buscarAgenciaPorServicoCertificadoDigitalVerificationPoint.checarBuscaDeAgenciaCertificadoDigital();
 	}
 

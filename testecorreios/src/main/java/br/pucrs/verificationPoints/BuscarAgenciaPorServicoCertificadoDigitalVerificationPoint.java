@@ -24,7 +24,7 @@ public class BuscarAgenciaPorServicoCertificadoDigitalVerificationPoint {
 		this.buscarAgenciasTask = new BuscarAgenciasTask(driver);
 	}
 
-	public void checarBuscaDeAgenciaCertificadoDigital() {
+	public void checarBuscaDeAgenciaCertificadoDigital() throws InterruptedException {
 		this.buscarAgenciasTask.apertarBotaoBuscarAgencia();
 		Report.log(Status.INFO, "Buscar Agências Por Servico Foi Selecionado");
 
@@ -46,6 +46,12 @@ public class BuscarAgenciaPorServicoCertificadoDigitalVerificationPoint {
 
 		this.buscarAgenciasTask.selecionarAtendimentoCertificadoDigital();
 		Report.log(Status.INFO, "A Opção Certificado Digital Foi Selecionada");
+		
+		this.buscarAgenciasTask.clicarNoBody();
+		
+		this.buscarAgenciasTask.rolarPaginaParaVerificarResultado();
+		
+		Thread.sleep(1000);	
 
 		int size = driver.findElements(By.id("tableNomeAgencia")).size();
 		if (size != 0) {

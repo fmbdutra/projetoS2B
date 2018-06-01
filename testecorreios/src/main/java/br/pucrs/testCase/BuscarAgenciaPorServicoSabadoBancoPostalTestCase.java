@@ -10,30 +10,30 @@ import com.aventstack.extentreports.Status;
 import br.pucrs.framework.Driver;
 import br.pucrs.framework.Report;
 import br.pucrs.framework.Screenshot;
-import br.pucrs.verificationPoints.BuscarAgenciaPorServicoDomingoBancoPostalVerificationPoint;
+import br.pucrs.verificationPoints.BuscarAgenciaPorServicoSabadoBancoPostalVerificationPoint;
 
-public class BuscarAgenciaPorServicoDomingoBancoPostalTestCase {
+public class BuscarAgenciaPorServicoSabadoBancoPostalTestCase {
+	
 	private WebDriver driver;
-	private BuscarAgenciaPorServicoDomingoBancoPostalVerificationPoint buscarAgenciaPorServicoVerificationPoint;
+	private BuscarAgenciaPorServicoSabadoBancoPostalVerificationPoint buscarAgenciaPorServicoSabadoBancoPostalVerificationPoint;
 
 	@Before
 	public void setUp() {
-		Report.startTest("Buscar Agência Por Serviço - Domingo e Banco Postal");
+		Report.startTest("Buscar Agência Por Serviço - Sábado e Banco Postal");
 
 		driver = Driver.getFirefoxDriver();
 
-		driver.get("http://www.correios.com.br/?set_language=pt-br");
+		driver.get("http://www.correios.com.br/");
 		driver.manage().window().maximize();
 
-		this.buscarAgenciaPorServicoVerificationPoint = new BuscarAgenciaPorServicoDomingoBancoPostalVerificationPoint(
-				driver);
+		this.buscarAgenciaPorServicoSabadoBancoPostalVerificationPoint = new BuscarAgenciaPorServicoSabadoBancoPostalVerificationPoint(driver);
 
 		Report.log(Status.INFO, "A Página Foi Carregada", Screenshot.capture(driver));
 	}
 
 	@Test
 	public void main() throws InterruptedException {
-		this.buscarAgenciaPorServicoVerificationPoint.checarBuscaDeAgenciaDomingoBancoPostal();
+		this.buscarAgenciaPorServicoSabadoBancoPostalVerificationPoint.checarBuscaDeAgenciaSabadoPostal();
 	}
 
 	@After
@@ -42,5 +42,7 @@ public class BuscarAgenciaPorServicoDomingoBancoPostalTestCase {
 
 		Report.close();
 	}
+
+
 
 }

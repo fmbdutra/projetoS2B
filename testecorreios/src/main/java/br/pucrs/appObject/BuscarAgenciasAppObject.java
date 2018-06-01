@@ -78,4 +78,8 @@ public class BuscarAgenciasAppObject {
 	public WebElement getPrimeiroAgenciaDaBuscaLink() {
 		return this.driver.findElement(By.xpath("//*[@id=\"tableNomeAgencia\"]/tbody/tr/td[1]/a"));
 	}
+	
+	public WebElement getTagBodyClick() {
+		return this.driver.findElement(By.xpath("/html/body/div[1]/div[3]/div[2]/div/div"));
+	}
 }
