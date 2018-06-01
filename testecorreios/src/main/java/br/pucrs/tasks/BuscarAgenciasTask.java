@@ -16,7 +16,7 @@ public class BuscarAgenciasTask {
 		this.homeAppObject = new HomeAppObject(driver);
 		this.buscarAgenciasAppObject = new BuscarAgenciasAppObject(driver);
 	}
-	
+
 	public void apertarBotaoBuscarAgencia() {
 		this.homeAppObject.getBuscarAgencia().click();
 	}
@@ -27,7 +27,8 @@ public class BuscarAgenciasTask {
 	}
 
 	public void selecionarMunicipioComboBox(String municipio) {
-		this.buscarAgenciasAppObject.getMunicipioComboBox().click();;
+		this.buscarAgenciasAppObject.getMunicipioComboBox().click();
+		;
 		this.driver.findElement(By.xpath(municipio)).click();
 	}
 
@@ -35,24 +36,24 @@ public class BuscarAgenciasTask {
 		this.buscarAgenciasAppObject.getBairroComboBox().click();
 		this.driver.findElement(By.xpath(bairro)).click();
 	}
-	
+
 	public void selecionarHorario(String horario) {
 		this.buscarAgenciasAppObject.getHorarioComboBox().click();
 		this.driver.findElement(By.xpath(horario)).click();
 	}
-	
+
 	public void selecionarAtendimentoDomingo() {
 		this.buscarAgenciasAppObject.getDomingoCheckBox().click();
 	}
-	
+
 	public void selecionarAtendimentoBancoPostal() {
 		this.buscarAgenciasAppObject.getBancoPostalCheckBox().click();
 	}
-	
+
 	public void selecionarAtendimentoPlantao() {
 		this.buscarAgenciasAppObject.getPlantaoCheckBox().click();
 	}
-	
+
 	public void selecionarAtendimentoCertificadoDigital() {
 		this.buscarAgenciasAppObject.getCertificadoDigitalCheckBox().click();
 	}

@@ -19,26 +19,27 @@ public class BuscarAgenciaPorServicoCertificadoDigitalTestCase {
 	@Before
 	public void setUp() {
 		Report.startTest("Buscar Agência Por Serviço - Certificado Digital");
-		
+
 		driver = Driver.getFirefoxDriver();
-		
+
 		driver.get("http://www.correios.com.br/?set_language=pt-br");
 		driver.manage().window().maximize();
-		
-		this.buscarAgenciaPorServicoCertificadoDigitalVerificationPoint = new BuscarAgenciaPorServicoCertificadoDigitalVerificationPoint(driver);
-		
+
+		this.buscarAgenciaPorServicoCertificadoDigitalVerificationPoint = new BuscarAgenciaPorServicoCertificadoDigitalVerificationPoint(
+				driver);
+
 		Report.log(Status.INFO, "A Página Foi Carregada", Screenshot.capture(driver));
 	}
-	
+
 	@Test
 	public void main() {
 		this.buscarAgenciaPorServicoCertificadoDigitalVerificationPoint.checarBuscaDeAgenciaCertificadoDigital();
 	}
-	
+
 	@After
 	public void tearDown() {
 		driver.close();
-		
+
 		Report.close();
 	}
 }

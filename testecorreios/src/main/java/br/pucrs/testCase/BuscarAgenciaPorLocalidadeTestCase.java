@@ -18,10 +18,10 @@ public class BuscarAgenciaPorLocalidadeTestCase {
 		Report.startTest("Teste de Busca de Agência(Por Localidade)");
 
 		driver = Driver.getFirefoxDriver();
-		
+
 		driver.get("http://www.correios.com.br/");
 		driver.manage().window().maximize();
-		
+
 		this.buscarAgenciaPorLocalidadeVerificationPoint = new BuscarAgenciaPorLocalidadeVerificationPoint(driver);
 
 	}
@@ -30,7 +30,7 @@ public class BuscarAgenciaPorLocalidadeTestCase {
 	public void main() throws InterruptedException {
 
 		this.buscarAgenciaPorLocalidadeVerificationPoint.checarBuscaporLocalidade();
-		
+
 	}
 
 	@After

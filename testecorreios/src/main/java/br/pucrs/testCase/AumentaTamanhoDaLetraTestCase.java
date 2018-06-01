@@ -23,7 +23,7 @@ public class AumentaTamanhoDaLetraTestCase {
 
 		driver.get("http://www.correios.com.br/?set_language=pt-br");
 		driver.manage().window().maximize();
-		
+
 		this.aumentaTamanhoDaLetraVerificationPoint = new AumentaTamanhoDaLetraVerificationPoint(driver);
 
 		Report.log(Status.INFO, "A página foi carregada", Screenshot.capture(driver));

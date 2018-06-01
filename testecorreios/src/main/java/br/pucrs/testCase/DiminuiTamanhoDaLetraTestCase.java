@@ -24,7 +24,7 @@ public class DiminuiTamanhoDaLetraTestCase {
 
 		driver.get("http://www.correios.com.br/");
 		driver.manage().window().maximize();
-		
+
 		this.diminuiTamanhoDaLetraVerificationPoint = new DiminuiTamanhoDaLetraVerificationPoint(driver);
 
 		Report.log(Status.INFO, "A página foi carregada", Screenshot.capture(driver));

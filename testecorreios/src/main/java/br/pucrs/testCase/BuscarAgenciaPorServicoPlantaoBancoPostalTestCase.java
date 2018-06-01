@@ -15,30 +15,31 @@ import br.pucrs.verificationPoints.BuscarAgenciaPorServicoPlantaoBancoPostalVeri
 public class BuscarAgenciaPorServicoPlantaoBancoPostalTestCase {
 	private WebDriver driver;
 	private BuscarAgenciaPorServicoPlantaoBancoPostalVerificationPoint buscarAgenciaPorServicoPlantaoBancoPostalVerificationPoint;
-	
+
 	@Before
 	public void setUp() {
 		Report.startTest("Buscar Agência Por Serviço - Plantao e Banco Postal");
-		
+
 		driver = Driver.getFirefoxDriver();
-		
+
 		driver.get("http://www.correios.com.br/?set_language=pt-br");
 		driver.manage().window().maximize();
-		
-		this.buscarAgenciaPorServicoPlantaoBancoPostalVerificationPoint = new BuscarAgenciaPorServicoPlantaoBancoPostalVerificationPoint(driver);
-		
+
+		this.buscarAgenciaPorServicoPlantaoBancoPostalVerificationPoint = new BuscarAgenciaPorServicoPlantaoBancoPostalVerificationPoint(
+				driver);
+
 		Report.log(Status.INFO, "A Página Foi Carregada", Screenshot.capture(driver));
 	}
-	
+
 	@Test
 	public void main() {
 		this.buscarAgenciaPorServicoPlantaoBancoPostalVerificationPoint.checarBusacaAgenciaPlantaoBancoPostal();
 	}
-	
+
 	@After
 	public void tearDown() {
 		driver.close();
-		
+
 		Report.close();
 	}
 }

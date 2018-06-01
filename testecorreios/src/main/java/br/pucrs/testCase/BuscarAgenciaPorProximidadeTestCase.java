@@ -18,7 +18,7 @@ public class BuscarAgenciaPorProximidadeTestCase {
 		Report.startTest("Teste de Busca de Agência(Por Proximidade)");
 
 		driver = Driver.getFirefoxDriver();
-		
+
 		driver.get("http://www.correios.com.br/");
 		driver.manage().window().maximize();
 
@@ -28,7 +28,7 @@ public class BuscarAgenciaPorProximidadeTestCase {
 
 	@Test
 	public void main() throws InterruptedException {
-				
+
 		this.buscarAgenciaPorProximidadeVerificationPoint.checarEnderecoDaAgenciaNoMapa();
 	}
 
