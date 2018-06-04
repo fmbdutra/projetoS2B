@@ -1,25 +1,18 @@
 package br.pucrs.tasks;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
-import br.pucrs.appObject.HomeAppObject;
+import br.pucrs.appObject.BuscaCepEnderecoAppObject;
 
 public class BuscaCepEnderecoTask {
-	private HomeAppObject homeAppObject;
+	private BuscaCepEnderecoAppObject buscaCepEnderecoAppObject;
 	
 	public BuscaCepEnderecoTask(WebDriver driver) {
-		this.homeAppObject = new HomeAppObject(driver);
-	}
-	
-	public void clicarInputBuscaCepEndereco() {
-		this.homeAppObject.getBuscaCepEndereco().click();
+		this.buscaCepEnderecoAppObject = new BuscaCepEnderecoAppObject(driver);
 	}
 	
 	public void preencherCepEnderecoInputText(String cepEndereco) {
-		this.homeAppObject.getBuscaCepEndereco().sendKeys(cepEndereco);
-	}
-	
-	public void clicarPesquisarCepEndercoButton() {
-		this.homeAppObject.getPesquisarCepEnderecoBusca().click();
+		this.buscaCepEnderecoAppObject.getCepEnderecoInput().sendKeys(cepEndereco, Keys.ENTER);
 	}
 }
