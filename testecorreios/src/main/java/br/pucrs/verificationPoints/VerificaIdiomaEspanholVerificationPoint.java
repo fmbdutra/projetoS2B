@@ -10,12 +10,12 @@ import br.pucrs.framework.Report;
 import br.pucrs.framework.Screenshot;
 import br.pucrs.tasks.VerificaIdiomaEspanholTask;
 
-public class VerificarIdiomaEspanholVerificationPoint {
+public class VerificaIdiomaEspanholVerificationPoint {
 	private WebDriver driver;
 
 	private VerificaIdiomaEspanholTask verificaIdiomaEspanholTask;
 
-	public VerificarIdiomaEspanholVerificationPoint(WebDriver driver) {
+	public VerificaIdiomaEspanholVerificationPoint(WebDriver driver) {
 		this.driver = driver;
 		this.verificaIdiomaEspanholTask = new VerificaIdiomaEspanholTask(driver);
 	}

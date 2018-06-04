@@ -40,12 +40,6 @@ public class BuscarAgenciasTask {
 	}
 
 	public void rolarPaginaParaVerificarResultado() {
-
-		/*
-		 * for(int x=1;x<=10;x++) {
-		 * this.buscarAgenciasAppObject.getPesquisarButton().sendKeys(Keys.ARROW_DOWN);
-		 * }
-		 */
 		JavascriptExecutor js = ((JavascriptExecutor) driver);
 		js.executeScript("window.scrollTo(0,200)");
 	}

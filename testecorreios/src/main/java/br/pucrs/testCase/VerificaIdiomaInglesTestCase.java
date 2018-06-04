@@ -12,7 +12,7 @@ import br.pucrs.framework.Report;
 import br.pucrs.framework.Screenshot;
 import br.pucrs.verificationPoints.VerificaIdiomaInglesVerificationPoint;
 
-public class VerificarIdiomaInglesTestCase {
+public class VerificaIdiomaInglesTestCase {
 	private WebDriver driver;
 	private VerificaIdiomaInglesVerificationPoint verificaIdiomaInglesVerificationPoint;
 

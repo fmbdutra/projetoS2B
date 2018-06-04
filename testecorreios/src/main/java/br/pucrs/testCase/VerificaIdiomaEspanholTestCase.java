@@ -10,11 +10,11 @@ import com.aventstack.extentreports.Status;
 import br.pucrs.framework.Driver;
 import br.pucrs.framework.Report;
 import br.pucrs.framework.Screenshot;
-import br.pucrs.verificationPoints.VerificarIdiomaEspanholVerificationPoint;
+import br.pucrs.verificationPoints.VerificaIdiomaEspanholVerificationPoint;
 
 public class VerificaIdiomaEspanholTestCase {
 	private WebDriver driver;
-	private VerificarIdiomaEspanholVerificationPoint verificarIdiomaEspanholVerificationPoint;
+	private VerificaIdiomaEspanholVerificationPoint verificaIdiomaEspanholVerificationPoint;
 
 	@Before
 	public void setUp() {
@@ -25,14 +25,14 @@ public class VerificaIdiomaEspanholTestCase {
 		driver.get("http://www.correios.com.br/");
 		driver.manage().window().maximize();
 
-		this.verificarIdiomaEspanholVerificationPoint = new VerificarIdiomaEspanholVerificationPoint(driver);
+		this.verificaIdiomaEspanholVerificationPoint = new VerificaIdiomaEspanholVerificationPoint(driver);
 
 		Report.log(Status.INFO, "A página foi carregada", Screenshot.capture(driver));
 	}
 
 	@Test
 	public void main() {
-		this.verificarIdiomaEspanholVerificationPoint.verificarIdiomaDoTexto();
+		this.verificaIdiomaEspanholVerificationPoint.verificarIdiomaDoTexto();
 	}
 
 	@After

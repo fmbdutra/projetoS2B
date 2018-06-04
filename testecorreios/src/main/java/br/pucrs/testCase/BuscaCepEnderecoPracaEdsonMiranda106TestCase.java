@@ -15,26 +15,28 @@ import br.pucrs.verificationPoints.BuscaCepEnderecoPracaEdsonMiranda106Verificat
 public class BuscaCepEnderecoPracaEdsonMiranda106TestCase {
 	private WebDriver driver;
 	private BuscaCepEnderecoPracaEdsonMiranda106VerificationPoint buscaCepEnderecoPracaEdsonMiranda106VerificationPoint;
-	
+
 	@Before
 	public void setUp() {
 		Report.startTest("Teste de Busca Endereço Praça Edson Miranda 106");
-		
+
 		driver = Driver.getFirefoxDriver();
-		
+
 		driver.get("http://www.buscacep.correios.com.br/sistemas/buscacep/BuscaCepEndereco.cfm");
 		driver.manage().window().maximize();
-		
+
 		Report.log(Status.INFO, "A Página Foi Carregada", Screenshot.capture(driver));
-		
-		this.buscaCepEnderecoPracaEdsonMiranda106VerificationPoint = new BuscaCepEnderecoPracaEdsonMiranda106VerificationPoint(driver);
+
+		this.buscaCepEnderecoPracaEdsonMiranda106VerificationPoint = new BuscaCepEnderecoPracaEdsonMiranda106VerificationPoint(
+				driver);
 	}
-	
+
 	@Test
 	public void main() throws InterruptedException {
-		this.buscaCepEnderecoPracaEdsonMiranda106VerificationPoint.checarBuscaCepEnderecoPracaEdsonMiranda106();;
+		this.buscaCepEnderecoPracaEdsonMiranda106VerificationPoint.checarBuscaCepEnderecoPracaEdsonMiranda106();
+		;
 	}
-	
+
 	@After
 	public void tearDown() {
 		driver.close();

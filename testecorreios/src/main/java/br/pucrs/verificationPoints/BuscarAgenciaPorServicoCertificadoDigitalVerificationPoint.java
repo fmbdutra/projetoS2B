@@ -41,17 +41,17 @@ public class BuscarAgenciaPorServicoCertificadoDigitalVerificationPoint {
 		this.buscarAgenciasTask.selecionarBairroComboBox("//*[@id=\"bairroAgencia\"]/option[8]");
 		Report.log(Status.INFO, "O Bairro Centro Histórico Foi Selecionado");
 
+		this.buscarAgenciasTask.selecionarAtendimentoCertificadoDigital();
+		Report.log(Status.INFO, "A Opção Certificado Digital Foi Selecionada");
+
 		this.buscarAgenciasTask.selecionarHorario("//*[@id=\"selHorario\"]/option[12]");
 		Report.log(Status.INFO, "O Horário de 10:00 Foi Selecionado");
 
-		this.buscarAgenciasTask.selecionarAtendimentoCertificadoDigital();
-		Report.log(Status.INFO, "A Opção Certificado Digital Foi Selecionada");
-		
 		this.buscarAgenciasTask.clicarNoBody();
-		
+
 		this.buscarAgenciasTask.rolarPaginaParaVerificarResultado();
-		
-		Thread.sleep(1000);	
+
+		Thread.sleep(1000);
 
 		int size = driver.findElements(By.id("tableNomeAgencia")).size();
 		if (size != 0) {

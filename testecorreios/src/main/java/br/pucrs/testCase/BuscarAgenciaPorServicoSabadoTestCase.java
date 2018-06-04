@@ -13,7 +13,7 @@ import br.pucrs.framework.Screenshot;
 import br.pucrs.verificationPoints.BuscarAgenciaPorServicoSabadoVerificationPoint;
 
 public class BuscarAgenciaPorServicoSabadoTestCase {
-	
+
 	private WebDriver driver;
 	private BuscarAgenciaPorServicoSabadoVerificationPoint buscarAgenciaPorServicoSabadoVerificationPoint;
 
@@ -26,7 +26,8 @@ public class BuscarAgenciaPorServicoSabadoTestCase {
 		driver.get("http://www.correios.com.br/");
 		driver.manage().window().maximize();
 
-		this.buscarAgenciaPorServicoSabadoVerificationPoint = new BuscarAgenciaPorServicoSabadoVerificationPoint(driver);
+		this.buscarAgenciaPorServicoSabadoVerificationPoint = new BuscarAgenciaPorServicoSabadoVerificationPoint(
+				driver);
 
 		Report.log(Status.INFO, "A Página Foi Carregada", Screenshot.capture(driver));
 	}
@@ -42,6 +43,5 @@ public class BuscarAgenciaPorServicoSabadoTestCase {
 
 		Report.close();
 	}
-
 
 }

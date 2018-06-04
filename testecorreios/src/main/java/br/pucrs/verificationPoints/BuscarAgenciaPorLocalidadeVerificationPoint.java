@@ -26,16 +26,10 @@ public class BuscarAgenciaPorLocalidadeVerificationPoint {
 		this.driver = driver;
 		this.buscarAgenciasAppObject = new BuscarAgenciasAppObject(driver);
 		this.buscarAgenciasTask = new BuscarAgenciasTask(driver);
-		// this.buscarAgenciaPorLocalidadeTask = new
-		// BuscarAgenciaPorLocalidadeTask(driver);
 		this.homeAppObject = new HomeAppObject(driver);
 	}
 
 	public void checarBuscaporLocalidade() throws InterruptedException {
-
-		// String estado = "RIO GRANDE DO SUL",
-		// municipio = "PORTO ALEGRE",
-		// bairro = "CRISTO REDENTOR ";
 
 		this.homeAppObject.getBuscarAgenciaButton().click();
 		Report.log(Status.INFO, "Entrou Na Página Inicial dos Correios");

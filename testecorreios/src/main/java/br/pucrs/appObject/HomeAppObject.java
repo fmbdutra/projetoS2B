@@ -12,7 +12,8 @@ public class HomeAppObject {
 	}
 
 	public WebElement getFonteDoTextoHtml() {
-		WebElement tamanhoFonte = this.driver.findElement(By.xpath("/html/body/div[3]/div/div/div[2]/div[2]/div/ul/li[1]/a"));
+		WebElement tamanhoFonte = this.driver
+				.findElement(By.xpath("/html/body/div[3]/div/div/div[2]/div[2]/div/ul/li[1]/a"));
 		return tamanhoFonte;
 	}
 
@@ -39,28 +40,23 @@ public class HomeAppObject {
 	public WebElement getBuscarAgenciaButton() {
 		return this.driver.findElement(By.cssSelector("#content-servicos > ul > li:nth-child(5) > div.acao > a"));
 	}
-	
 
 	public WebElement getContrasteButton() {
-		return this.driver.findElement(By.id("txt-contraste"));		
+		return this.driver.findElement(By.id("txt-contraste"));
 	}
-	
+
 	public WebElement getCorCabecalhoHtml() {
 		return this.driver.findElement(By.id("portal-top"));
 	}
-	/*
-	public WebElement getCorBannerHtml() {
-		return this.driver.findElement(By.xpath("//*[@id=\"fb-root\"]"));
-	}
-	*/
+
 	public WebElement getCorOpcoesHtml() {
 		return this.driver.findElement(By.id("content-core-mid"));
 	}
-	
+
 	public WebElement getCorSolucoesHtml() {
 		return this.driver.findElement(By.id("content-core-mid-bot"));
 	}
-	
+
 	public WebElement getCorFimHtml() {
 		return this.driver.findElement(By.id("content-core-bot"));
 	}
@@ -68,27 +64,27 @@ public class HomeAppObject {
 	public WebElement getCorRodapeHtml() {
 		return this.driver.findElement(By.id("portal-footer-wrapper"));
 	}
-	
+
 	public WebElement getBuscaCepEnderecoTextField() {
 		return this.driver.findElement(By.id("acesso-busca"));
 	}
-	
+
 	public WebElement getPesquisarCepEnderecoBuscaButton() {
 		return this.driver.findElement(By.xpath("//*[@id=\"content-servicos\"]/ul/li[2]/form/div[2]/input[2]"));
 	}
-	
+
 	public WebElement getOpcoesHomeHtml() {
 		return this.driver.findElement(By.xpath("//*[@id=\"rastreamento-obj\"]/form/div[1]"));
 	}
-	
+
 	public WebElement getSolucoesQueAproximamHtml() {
 		return this.driver.findElement(By.xpath("//*[@id=\"titulo-destaque\"]/span"));
 	}
-	
+
 	public WebElement getParteFinalHomeHtml() {
 		return this.driver.findElement(By.xpath("//*[@id=\"titulo-destaque\"]/span"));
 	}
-	
+
 	public WebElement getRodapeHomeHtml() {
 		return this.driver.findElement(By.xpath("//*[@id=\"titulo-destaque\"]/span"));
 	}

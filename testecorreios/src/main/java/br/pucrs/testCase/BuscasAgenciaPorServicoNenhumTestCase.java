@@ -13,34 +13,35 @@ import br.pucrs.framework.Screenshot;
 import br.pucrs.verificationPoints.BuscarAgenciaPorServicoNenhumVerificationPoint;
 
 public class BuscasAgenciaPorServicoNenhumTestCase {
-	
-		private WebDriver driver;
-		private BuscarAgenciaPorServicoNenhumVerificationPoint buscarAgenciaPorServicoNenhumVerificationPoint;
 
-		@Before
-		public void setUp() {
-			Report.startTest("Buscar Agência Por Serviço - Nenhuma Seleção");
+	private WebDriver driver;
+	private BuscarAgenciaPorServicoNenhumVerificationPoint buscarAgenciaPorServicoNenhumVerificationPoint;
 
-			driver = Driver.getFirefoxDriver();
+	@Before
+	public void setUp() {
+		Report.startTest("Buscar Agência Por Serviço - Nenhuma Seleção");
 
-			driver.get("http://www.correios.com.br/");
-			driver.manage().window().maximize();
+		driver = Driver.getFirefoxDriver();
 
-			this.buscarAgenciaPorServicoNenhumVerificationPoint = new BuscarAgenciaPorServicoNenhumVerificationPoint(driver);
+		driver.get("http://www.correios.com.br/");
+		driver.manage().window().maximize();
 
-			Report.log(Status.INFO, "A Página Foi Carregada", Screenshot.capture(driver));
-		}
+		this.buscarAgenciaPorServicoNenhumVerificationPoint = new BuscarAgenciaPorServicoNenhumVerificationPoint(
+				driver);
 
-		@Test
-		public void main() throws InterruptedException {
-			this.buscarAgenciaPorServicoNenhumVerificationPoint.checarBuscaDeAgenciaNenhum();
-		}
-
-		@After
-		public void tearDown() {
-			driver.close();
-
-			Report.close();
-		}
-
+		Report.log(Status.INFO, "A Página Foi Carregada", Screenshot.capture(driver));
 	}
+
+	@Test
+	public void main() throws InterruptedException {
+		this.buscarAgenciaPorServicoNenhumVerificationPoint.checarBuscaDeAgenciaNenhum();
+	}
+
+	@After
+	public void tearDown() {
+		driver.close();
+
+		Report.close();
+	}
+
+}

@@ -41,11 +41,7 @@ public class BuscarAgenciaPorServicoDomingoVerificationPoint {
 		this.buscarAgenciasTask.selecionarBairroComboBox("//*[@id=\"bairroAgencia\"]/option[8]");
 		Report.log(Status.INFO, "O Bairro Centro Histórico Foi Selecionado");
 
-		this.buscarAgenciasTask.clicarNoBody();
-		this.buscarAgenciasTask.rolarPaginaParaVerificarResultado();
-		Thread.sleep(1300);
-
-		Report.log(Status.INFO, "Exibido Agências Localizadas no Bairro Centro Histórico", Screenshot.capture(driver));
+		Report.log(Status.INFO, "Exibido Agências Localizadas no Bairro Centro Histórico");
 
 		this.buscarAgenciasTask.selecionarAtendimentoDomingo();
 		Report.log(Status.INFO, "O Atendimento Domingo Foi Selecionado");

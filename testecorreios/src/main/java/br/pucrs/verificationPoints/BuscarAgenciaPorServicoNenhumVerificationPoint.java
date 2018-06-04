@@ -44,22 +44,22 @@ public class BuscarAgenciaPorServicoNenhumVerificationPoint {
 
 		this.buscarAgenciasTask.selecionarHorario("//*[@id=\"selHorario\"]/option[12]");
 		Report.log(Status.INFO, "O Horário de 10:00 Foi Selecionado");
-		
+
 		this.buscarAgenciasTask.clicarNoBody();
-		
+
 		this.buscarAgenciasTask.rolarPaginaParaVerificarResultado();
-		
-		Thread.sleep(1000);		
-		
+
+		Thread.sleep(1000);
+
 		int size = driver.findElements(By.id("tableNomeAgencia")).size();
 		if (size < 10) {
-			Report.log(Status.FAIL, "O Teste Não Retornou Resultados das Agências do Bairro Centro Histórico", Screenshot.capture(driver));
+			Report.log(Status.FAIL, "O Teste Não Retornou Resultados das Agências do Bairro Centro Histórico",
+					Screenshot.capture(driver));
 		} else {
 			Report.log(Status.PASS, "O Teste Foi Executado e Foi Apresentada Todas Agências do Bairro Centro Histórico",
 					Screenshot.capture(driver));
 		}
-		assertEquals(10, size); //Exibe todas as agências no bairro Centro Histórico que são 10 no total
+		assertEquals(10, size); // Exibe todas as agências no bairro Centro Histórico que são 10 no total
 	}
 
-	
 }

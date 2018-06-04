@@ -15,31 +15,31 @@ import br.pucrs.verificationPoints.BuscaCepEnderecoInvalidoVerificationPoint;
 public class BuscaCepEnderecoInvalidoTestCase {
 	private WebDriver driver;
 	private BuscaCepEnderecoInvalidoVerificationPoint buscaCepEnderecoInvalidoVerificationPoint;
-	
+
 	@Before
 	public void setUp() {
 		Report.startTest("Teste de Busca Endereço Inválido");
-		
+
 		driver = Driver.getFirefoxDriver();
-		
+
 		driver.get("http://www.buscacep.correios.com.br/sistemas/buscacep/BuscaCepEndereco.cfm");
 		driver.manage().window().maximize();
-		
+
 		Report.log(Status.INFO, "A Página Foi Carregada", Screenshot.capture(driver));
-		
+
 		this.buscaCepEnderecoInvalidoVerificationPoint = new BuscaCepEnderecoInvalidoVerificationPoint(driver);
 	}
-	
+
 	@Test
 	public void main() throws InterruptedException {
 		this.buscaCepEnderecoInvalidoVerificationPoint.checarBuscaCepEnderecoInvalido();
 	}
-	
+
 	@After
 	public void tearDown() {
 		driver.close();
 
 		Report.close();
 	}
-	
+
 }

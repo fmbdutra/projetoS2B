@@ -15,26 +15,27 @@ import br.pucrs.verificationPoints.BuscaCepEnderecoNegativo04824080VerificationP
 public class BuscaCepEnderecoNegativo04824080TestCase {
 	private WebDriver driver;
 	private BuscaCepEnderecoNegativo04824080VerificationPoint buscaCepEnderecoNegativo04824080VerificationPoint;
-	
+
 	@Before
 	public void setUp() {
 		Report.startTest("Teste de Busca de Cep -04824080");
-		
+
 		driver = Driver.getFirefoxDriver();
-		
+
 		driver.get("http://www.buscacep.correios.com.br/sistemas/buscacep/BuscaCepEndereco.cfm");
 		driver.manage().window().maximize();
-		
+
 		Report.log(Status.INFO, "A Página Foi Carregada", Screenshot.capture(driver));
-		
-		this.buscaCepEnderecoNegativo04824080VerificationPoint = new BuscaCepEnderecoNegativo04824080VerificationPoint(driver);
+
+		this.buscaCepEnderecoNegativo04824080VerificationPoint = new BuscaCepEnderecoNegativo04824080VerificationPoint(
+				driver);
 	}
-	
+
 	@Test
 	public void main() throws InterruptedException {
 		this.buscaCepEnderecoNegativo04824080VerificationPoint.checarBuscaCepEnderecoNegativo04824080();
 	}
-	
+
 	@After
 	public void tearDown() {
 		driver.close();

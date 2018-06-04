@@ -71,4 +71,3 @@ public class BuscarAgenciaPorServicoTodosVerificationPoint {
 		assertEquals(0, size);
 	}
 }
-

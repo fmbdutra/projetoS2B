@@ -12,7 +12,7 @@ public class ContrasteTask {
 
 	public ContrasteTask(WebDriver driver) {
 		this.homeAppObject = new HomeAppObject(driver);
-		this.buscarAgenciasTask = new  BuscarAgenciasTask(driver);
+		this.buscarAgenciasTask = new BuscarAgenciasTask(driver);
 	}
 
 	public void apertaBotãoContraste() {
@@ -27,15 +27,6 @@ public class ContrasteTask {
 		return this.homeAppObject.getCorCabecalhoHtml().getCssValue("color");
 	}
 
-	/*
-	 * public String verificaFundoBanner() { return
-	 * this.homeAppObject.getCorBannerHtml().getCssValue("backgroud-color"); }
-	 */
-	/*
-	 * public String verificaTextoBanner() { return
-	 * this.homeAppObject.getCorBannerHtml().getCssValue("color"); }
-	 */
-
 	public String verificaFundoOpcoes() {
 		return this.homeAppObject.getCorOpcoesHtml().getCssValue("backgroud-color");
 	}
@@ -43,7 +34,7 @@ public class ContrasteTask {
 	public String verificaTextoOpcoes() {
 		return this.homeAppObject.getCorOpcoesHtml().getCssValue("color");
 	}
-	
+
 	public String verificaFundoSolucoes() {
 		return this.homeAppObject.getCorSolucoesHtml().getCssValue("backgroud-color");
 	}
@@ -51,11 +42,11 @@ public class ContrasteTask {
 	public String verificaTextoSolucoes() {
 		return this.homeAppObject.getCorOpcoesHtml().getCssValue("color");
 	}
-	
+
 	public String verificaFundoFim() {
 		return this.homeAppObject.getCorFimHtml().getCssValue("backgroud-color");
 	}
-	
+
 	public String verificaTextoFim() {
 		return this.homeAppObject.getCorFimHtml().getCssValue("color");
 	}
@@ -67,28 +58,27 @@ public class ContrasteTask {
 	public String verificaTextoRodape() {
 		return this.homeAppObject.getCorRodapeHtml().getCssValue("color");
 	}
-	
 
 	public void irParaOpcoes() {
 		this.homeAppObject.getOpcoesHomeHtml().click();
 		this.homeAppObject.getOpcoesHomeHtml().sendKeys(Keys.ARROW_DOWN);
 	}
-	
+
 	public void irParaSolucoesQueAproximam() {
 		this.homeAppObject.getSolucoesQueAproximamHtml().click();
 		this.homeAppObject.getSolucoesQueAproximamHtml().sendKeys(Keys.ARROW_DOWN);
 	}
-	
+
 	public void irParaFinalPagina() {
 		this.homeAppObject.getParteFinalHomeHtml().click();
 		this.homeAppObject.getParteFinalHomeHtml().sendKeys(Keys.ARROW_DOWN);
 	}
-	
+
 	public void irParaRodape() {
 		this.homeAppObject.getRodapeHomeHtml().click();
 		this.homeAppObject.getRodapeHomeHtml().sendKeys(Keys.ARROW_DOWN);
 	}
-	
+
 	public void percorrePagina() {
 		this.buscarAgenciasTask.rolarPaginaParaVerificarResultado();
 	}

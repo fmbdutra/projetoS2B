@@ -13,7 +13,7 @@ import br.pucrs.tasks.ContrasteTask;
 public class ContrasteDaPaginaVerificationPoint {
 	private WebDriver driver;
 	private ContrasteTask contrasteTask;
-	
+
 	boolean expected;
 
 	public ContrasteDaPaginaVerificationPoint(WebDriver driver) {
@@ -26,9 +26,7 @@ public class ContrasteDaPaginaVerificationPoint {
 	}
 
 	public void checarFuncaoContraste() throws InterruptedException {
-		
-		
-		
+
 		String fundoCab = this.contrasteTask.verificaFundoCabecalho(),
 				fundoOpc = this.contrasteTask.verificaFundoOpcoes(),
 				fundoSol = this.contrasteTask.verificaFundoSolucoes(), fundoFim = this.contrasteTask.verificaFundoFim(),
@@ -38,8 +36,7 @@ public class ContrasteDaPaginaVerificationPoint {
 				letraOpc = this.contrasteTask.verificaFundoOpcoes(),
 				letraSol = this.contrasteTask.verificaFundoSolucoes(), letraFim = this.contrasteTask.verificaFundoFim(),
 				letraRod = this.contrasteTask.verificaTextoRodape();
-		
-				
+
 		this.contrasteTask.apertaBotãoContraste();
 
 		Report.log(Status.INFO, "O Botão Contraste Foi Clicado na Página Inicial");
@@ -92,9 +89,11 @@ public class ContrasteDaPaginaVerificationPoint {
 												Report.log(Status.INFO,
 														"O Texto em Branco Foi Apresetando no Rodapé Página",
 														Screenshot.capture(driver));
-												
-												Report.log(Status.PASS,"Toda a Página Inicial foi Apresentada em Alto Contraste",Screenshot.capture(driver));
-												expected=true;
+
+												Report.log(Status.PASS,
+														"Toda a Página Inicial foi Apresentada em Alto Contraste",
+														Screenshot.capture(driver));
+												expected = true;
 											}
 
 										}
@@ -110,9 +109,9 @@ public class ContrasteDaPaginaVerificationPoint {
 
 		else {
 			errorContraste();
-			expected=false;
+			expected = false;
 		}
-		
+
 		assertTrue("A Página Não Apresenta Modo Contraste por Completo", this.expected);
 
 	}

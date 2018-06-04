@@ -41,19 +41,21 @@ public class BuscarAgenciaPorServicoDomingoBancoPostalVerificationPoint {
 		this.buscarAgenciasTask.selecionarBairroComboBox("//*[@id=\"bairroAgencia\"]/option[8]");
 		Report.log(Status.INFO, "O Bairro Centro Histórico Foi Selecionado");
 
+		this.buscarAgenciasTask.selecionarAtendimentoDomingo();
+		Report.log(Status.INFO, "O Atendimento Domingo Foi Selecionado");
+
+		this.buscarAgenciasTask.selecionarAtendimentoBancoPostal();
+		Report.log(Status.INFO, "As Opções de Banco Postal Foi Selecionadas");
+
 		this.buscarAgenciasTask.selecionarHorario("//*[@id=\"selHorario\"]/option[12]");
 		Report.log(Status.INFO, "O Horário de 10:00 Foi Selecionado");
 
-		this.buscarAgenciasTask.selecionarAtendimentoDomingo();
-		
-		this.buscarAgenciasTask.selecionarAtendimentoBancoPostal();
-		
 		this.buscarAgenciasTask.clicarNoBody();
-		
+
 		this.buscarAgenciasTask.rolarPaginaParaVerificarResultado();
-		
-		Thread.sleep(1000);	
-		
+
+		Thread.sleep(1000);
+
 		Report.log(Status.INFO, "As Opções de Domingo e Banco Postal Foram Selecionadas");
 
 		int size = driver.findElements(By.id("tableNomeAgencia")).size();

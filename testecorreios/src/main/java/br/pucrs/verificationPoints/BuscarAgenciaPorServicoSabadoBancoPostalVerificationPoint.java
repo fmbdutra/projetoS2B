@@ -18,13 +18,11 @@ public class BuscarAgenciaPorServicoSabadoBancoPostalVerificationPoint {
 	private WebDriver driver;
 	private BuscarAgenciasTask buscarAgenciasTask;
 
-
 	public BuscarAgenciaPorServicoSabadoBancoPostalVerificationPoint(WebDriver driver) {
 		this.buscarAgenciasAppObject = new BuscarAgenciasAppObject(driver);
 		this.driver = driver;
 		this.buscarAgenciasTask = new BuscarAgenciasTask(driver);
 	}
-
 
 	public void checarBuscaDeAgenciaSabadoPostal() throws InterruptedException {
 		this.buscarAgenciasTask.apertarBotaoBuscarAgencia();
@@ -42,31 +40,35 @@ public class BuscarAgenciaPorServicoSabadoBancoPostalVerificationPoint {
 
 		this.buscarAgenciasTask.selecionarBairroComboBox("//*[@id=\"bairroAgencia\"]/option[8]");
 		Report.log(Status.INFO, "O Bairro Centro Histórico Foi Selecionado");
-		
-		this.buscarAgenciasTask.clicarNoBody();		
-		this.buscarAgenciasTask.rolarPaginaParaVerificarResultado();		
-		Thread.sleep(1300);	
+
+		this.buscarAgenciasTask.clicarNoBody();
+		this.buscarAgenciasTask.rolarPaginaParaVerificarResultado();
+		Thread.sleep(1300);
 		Report.log(Status.INFO, "Exibido Agências Localizadas no Bairro Centro Histórico", Screenshot.capture(driver));
 
 		this.buscarAgenciasTask.selecionarAtendimentoSabado();
 		Report.log(Status.INFO, "O Atendimento Sábado Foi Selecionado");
 		this.buscarAgenciasTask.selecionarAtendimentoBancoPostal();
 		Report.log(Status.INFO, "O Atendimento Banco Postal Foi Selecionado");
-		
+
 		this.buscarAgenciasTask.selecionarHorario("//*[@id=\"selHorario\"]/option[12]");
 		Report.log(Status.INFO, "O Horário de 10:00 Foi Selecionado");
-				
-		this.buscarAgenciasTask.clicarNoBody();		
-		this.buscarAgenciasTask.rolarPaginaParaVerificarResultado();		
-		Thread.sleep(1300);		
-		
+
+		this.buscarAgenciasTask.clicarNoBody();
+		this.buscarAgenciasTask.rolarPaginaParaVerificarResultado();
+		Thread.sleep(1300);
+
 		int size = driver.findElements(By.id("tableNomeAgencia")).size();
 		if (size > 0) {
-			Report.log(Status.FAIL, "O Teste Não Devia Retornar Resultados Pois Não Abrem Agências Sábado com Banco Postal No Bairro Centro Histórico", Screenshot.capture(driver));
+			Report.log(Status.FAIL,
+					"O Teste Não Devia Retornar Resultados Pois Não Abrem Agências Sábado com Banco Postal No Bairro Centro Histórico",
+					Screenshot.capture(driver));
 		} else {
-			Report.log(Status.PASS, "O Teste Foi Executado e Não Retornou Resultado Pois Não Abrem Agências Sábado com Banco Postal No Bairro Centro Histórico", Screenshot.capture(driver));
+			Report.log(Status.PASS,
+					"O Teste Foi Executado e Não Retornou Resultado Pois Não Abrem Agências Sábado com Banco Postal No Bairro Centro Histórico",
+					Screenshot.capture(driver));
 		}
-		assertEquals(0, size); //Pois não abrem agências ao sábado com banco postal no Bairro Centro Histórico
+		assertEquals(0, size); // Pois não abrem agências ao sábado com banco postal no Bairro Centro Histórico
 	}
 
 }
