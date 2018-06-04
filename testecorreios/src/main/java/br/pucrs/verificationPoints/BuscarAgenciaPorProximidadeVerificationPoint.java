@@ -20,6 +20,8 @@ public class BuscarAgenciaPorProximidadeVerificationPoint {
 	}
 
 	public void checarEnderecoDaAgenciaNoMapa() throws InterruptedException {
+		
+		String enderecoBuscado = "Rodovia RS 118, 11800 - Maria Regina, Alvorada - RS, 94834-670";
 
 		this.buscarAgenciasTask.apertarBotaoBuscarAgencia();
 		Report.log(Status.INFO, "Entrou Na Página Inicial dos Correios");
@@ -28,7 +30,8 @@ public class BuscarAgenciaPorProximidadeVerificationPoint {
 		Report.log(Status.INFO, "Entrou na Página De 'Busca de Agências'");
 
 		Report.log(Status.INFO, "Buscar Agências Por Proximidade Foi Selecionado");
-		String enderecoBuscado = "Rodovia RS 118, 11800 - Maria Regina, Alvorada - RS, 94834-670";
+		
+		
 
 		this.buscarAgenciasTask.digitarLocalizacao(enderecoBuscado);
 		Report.log(Status.INFO, "Buscou Endereço " + enderecoBuscado);

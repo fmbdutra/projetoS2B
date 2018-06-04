@@ -32,7 +32,7 @@ public class BuscaCepEnderecoCampoVazioTestCase {
 	
 	@Test
 	public void main() throws InterruptedException {
-		this.buscaCepEnderecoCampoVerificationPoint.checarBuscaCepEnderecoCampoVazio();
+		this.buscaCepEnderecoCampoVerificationPoint.checarBuscaCepEnderecoCampoVazio();		
 	}
 	
 	@After

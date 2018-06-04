@@ -76,4 +76,20 @@ public class HomeAppObject {
 	public WebElement getPesquisarCepEnderecoBuscaButton() {
 		return this.driver.findElement(By.xpath("//*[@id=\"content-servicos\"]/ul/li[2]/form/div[2]/input[2]"));
 	}
+	
+	public WebElement getOpcoesHomeHtml() {
+		return this.driver.findElement(By.xpath("//*[@id=\"rastreamento-obj\"]/form/div[1]"));
+	}
+	
+	public WebElement getSolucoesQueAproximamHtml() {
+		return this.driver.findElement(By.xpath("//*[@id=\"titulo-destaque\"]/span"));
+	}
+	
+	public WebElement getParteFinalHomeHtml() {
+		return this.driver.findElement(By.xpath("//*[@id=\"titulo-destaque\"]/span"));
+	}
+	
+	public WebElement getRodapeHomeHtml() {
+		return this.driver.findElement(By.xpath("//*[@id=\"titulo-destaque\"]/span"));
+	}
 }
