@@ -12,14 +12,14 @@ public class BuscaCepEnderecoTask {
 	}
 	
 	public void clicarInputBuscaCepEndereco() {
-		this.homeAppObject.getBuscaCepEndereco().click();
+		this.homeAppObject.getBuscaCepEnderecoTextField().click();
 	}
 	
 	public void preencherCepEnderecoInputText(String cepEndereco) {
-		this.homeAppObject.getBuscaCepEndereco().sendKeys(cepEndereco);
+		this.homeAppObject.getBuscaCepEnderecoTextField().sendKeys(cepEndereco);
 	}
 	
 	public void clicarPesquisarCepEndercoButton() {
-		this.homeAppObject.getPesquisarCepEnderecoBusca().click();
+		this.homeAppObject.getPesquisarCepEnderecoBuscaButton().click();
 	}
 }

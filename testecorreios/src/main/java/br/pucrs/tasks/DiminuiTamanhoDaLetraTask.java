@@ -14,6 +14,6 @@ public class DiminuiTamanhoDaLetraTask {
 
 	public String apertarBotaoDiminuir() {
 		this.homeAppObject.getDiminuiTextoButton().click();
-		return this.homeAppObject.getFonteDoTexto().getCssValue("font-size");
+		return this.homeAppObject.getFonteDoTextoHtml().getCssValue("font-size");
 	}
 }

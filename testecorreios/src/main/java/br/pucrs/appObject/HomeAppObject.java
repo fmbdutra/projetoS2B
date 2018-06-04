@@ -11,7 +11,7 @@ public class HomeAppObject {
 		this.driver = driver;
 	}
 
-	public WebElement getFonteDoTexto() {
+	public WebElement getFonteDoTextoHtml() {
 		WebElement tamanhoFonte = this.driver.findElement(By.xpath("/html/body/div[3]/div/div/div[2]/div[2]/div/ul/li[1]/a"));
 		return tamanhoFonte;
 	}
@@ -45,13 +45,35 @@ public class HomeAppObject {
 		return this.driver.findElement(By.id("txt-contraste"));		
 	}
 	
-	public WebElement getBuscaCepEndereco() {
+	public WebElement getCorCabecalhoHtml() {
+		return this.driver.findElement(By.id("portal-top"));
+	}
+	/*
+	public WebElement getCorBannerHtml() {
+		return this.driver.findElement(By.xpath("//*[@id=\"fb-root\"]"));
+	}
+	*/
+	public WebElement getCorOpcoesHtml() {
+		return this.driver.findElement(By.id("content-core-mid"));
+	}
+	
+	public WebElement getCorSolucoesHtml() {
+		return this.driver.findElement(By.id("content-core-mid-bot"));
+	}
+	
+	public WebElement getCorFimHtml() {
+		return this.driver.findElement(By.id("content-core-bot"));
+	}
+
+	public WebElement getCorRodapeHtml() {
+		return this.driver.findElement(By.id("portal-footer-wrapper"));
+	}
+	
+	public WebElement getBuscaCepEnderecoTextField() {
 		return this.driver.findElement(By.id("acesso-busca"));
 	}
 	
-	public WebElement getPesquisarCepEnderecoBusca() {
+	public WebElement getPesquisarCepEnderecoBuscaButton() {
 		return this.driver.findElement(By.xpath("//*[@id=\"content-servicos\"]/ul/li[2]/form/div[2]/input[2]"));
-
 	}
-
 }

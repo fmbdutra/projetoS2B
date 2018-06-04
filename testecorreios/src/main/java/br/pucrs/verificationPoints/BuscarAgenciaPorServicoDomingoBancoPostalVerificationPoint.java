@@ -16,15 +16,11 @@ public class BuscarAgenciaPorServicoDomingoBancoPostalVerificationPoint {
 	private WebDriver driver;
 
 	private BuscarAgenciasTask buscarAgenciasTask;
-	// private BuscarAgenciaPorServicoDomingoBancoPostalTask
-	// buscarAgenciaPorServicoDomingoBancoPostalTask;
 	private BuscarAgenciasAppObject buscarAgenciasAppObject;
 
 	public BuscarAgenciaPorServicoDomingoBancoPostalVerificationPoint(WebDriver driver) {
 		this.driver = driver;
 		this.buscarAgenciasTask = new BuscarAgenciasTask(driver);
-		// this.buscarAgenciaPorServicoDomingoBancoPostalTask = new
-		// BuscarAgenciaPorServicoDomingoBancoPostalTask(driver);
 		this.buscarAgenciasAppObject = new BuscarAgenciasAppObject(driver);
 	}
 
