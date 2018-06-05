@@ -34,7 +34,7 @@ public class BuscaCepEnderecoPracaEdsonMiranda106TestCase {
 	@Test
 	public void main() throws InterruptedException {
 		this.buscaCepEnderecoPracaEdsonMiranda106VerificationPoint.checarBuscaCepEnderecoPracaEdsonMiranda106();
-		;
+		
 	}
 
 	@After
