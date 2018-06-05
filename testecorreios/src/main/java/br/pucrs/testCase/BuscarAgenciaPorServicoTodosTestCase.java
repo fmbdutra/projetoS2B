@@ -18,7 +18,7 @@ public class BuscarAgenciaPorServicoTodosTestCase {
 
 	@Before
 	public void setUp() {
-		Report.startTest("Buscar Agência Por Serviço - Selecionado Todas Opções");
+		Report.startTest("Teste: Busca de Agência por Serviços - Selecionando Todas Opções");
 
 		driver = Driver.getFirefoxDriver();
 

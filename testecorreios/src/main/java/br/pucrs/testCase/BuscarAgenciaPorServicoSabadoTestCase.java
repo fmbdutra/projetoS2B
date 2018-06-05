@@ -19,7 +19,7 @@ public class BuscarAgenciaPorServicoSabadoTestCase {
 
 	@Before
 	public void setUp() {
-		Report.startTest("Buscar Agência Por Serviço - Sábado");
+		Report.startTest("Teste: Busca de Agência por Serviços - Sábado");
 
 		driver = Driver.getFirefoxDriver();
 

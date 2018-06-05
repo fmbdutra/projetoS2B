@@ -18,7 +18,7 @@ public class BuscaCepEnderecoInvalidoTestCase {
 
 	@Before
 	public void setUp() {
-		Report.startTest("Teste de Busca Endereço Inválido");
+		Report.startTest("Teste: Busca Endereco Inválido");
 
 		driver = Driver.getFirefoxDriver();
 

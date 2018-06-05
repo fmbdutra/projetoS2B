@@ -12,14 +12,14 @@ import br.pucrs.framework.Report;
 import br.pucrs.framework.Screenshot;
 import br.pucrs.verificationPoints.BuscarAgenciaPorServicoNenhumVerificationPoint;
 
-public class BuscasAgenciaPorServicoNenhumTestCase {
+public class BuscasAgenciaPorServicoSemSelecaoTestCase {
 
 	private WebDriver driver;
 	private BuscarAgenciaPorServicoNenhumVerificationPoint buscarAgenciaPorServicoNenhumVerificationPoint;
 
 	@Before
 	public void setUp() {
-		Report.startTest("Buscar Agência Por Serviço - Nenhuma Seleção");
+		Report.startTest("Teste: Busca de Agência por Serviços - Não Selecionando Serviços");
 
 		driver = Driver.getFirefoxDriver();
 

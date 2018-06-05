@@ -18,7 +18,7 @@ public class BuscaCepEndereco01000000TestCase {
 
 	@Before
 	public void setUp() {
-		Report.startTest("Teste de Busca de Cep 01000000");
+		Report.startTest("Teste: Busca CEP 01000000");
 
 		driver = Driver.getFirefoxDriver();
 

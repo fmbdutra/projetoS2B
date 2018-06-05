@@ -17,7 +17,7 @@ public class AumentaTamanhoDaLetraTestCase {
 
 	@Before
 	public void setUp() {
-		Report.startTest("Teste de Acessibilidade(Aumento da Fonte)");
+		Report.startTest("Teste: Acessibliidade - Aumento do Tamanho da Letra");
 
 		driver = Driver.getFirefoxDriver();
 

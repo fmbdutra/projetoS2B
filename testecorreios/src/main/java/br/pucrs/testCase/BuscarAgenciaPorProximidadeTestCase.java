@@ -15,7 +15,7 @@ public class BuscarAgenciaPorProximidadeTestCase {
 
 	@Before
 	public void setUp() {
-		Report.startTest("Teste de Busca de Agência(Por Proximidade)");
+		Report.startTest("Teste: Busca de Agência por Proximidade");
 
 		driver = Driver.getFirefoxDriver();
 

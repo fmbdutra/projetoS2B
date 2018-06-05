@@ -18,7 +18,7 @@ public class ContrasteDaPáginaTestCase {
 
 	@Before
 	public void setUp() {
-		Report.startTest("Teste de Acessibilidade(Página em Contraste)");
+		Report.startTest("Teste: Acessibilidade - Contraste da Página");
 
 		driver = Driver.getFirefoxDriver();
 

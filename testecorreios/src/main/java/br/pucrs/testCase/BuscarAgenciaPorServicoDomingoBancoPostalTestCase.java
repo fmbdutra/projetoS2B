@@ -18,7 +18,7 @@ public class BuscarAgenciaPorServicoDomingoBancoPostalTestCase {
 
 	@Before
 	public void setUp() {
-		Report.startTest("Buscar Agência Por Serviço - Domingo e Banco Postal");
+		Report.startTest("Teste: Busca de Agência por Serviços - Domingo e Banco Postal");
 
 		driver = Driver.getFirefoxDriver();
 

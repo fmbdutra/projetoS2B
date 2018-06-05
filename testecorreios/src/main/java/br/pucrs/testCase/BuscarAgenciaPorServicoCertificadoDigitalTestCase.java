@@ -18,7 +18,7 @@ public class BuscarAgenciaPorServicoCertificadoDigitalTestCase {
 
 	@Before
 	public void setUp() {
-		Report.startTest("Buscar Agência Por Serviço - Certificado Digital");
+		Report.startTest("Teste: Busca de Agência por Serviços - Certificado Digital ");
 
 		driver = Driver.getFirefoxDriver();
 

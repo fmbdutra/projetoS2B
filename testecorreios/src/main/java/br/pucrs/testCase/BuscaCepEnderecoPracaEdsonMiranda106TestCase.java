@@ -18,7 +18,7 @@ public class BuscaCepEnderecoPracaEdsonMiranda106TestCase {
 
 	@Before
 	public void setUp() {
-		Report.startTest("Teste de Busca Endereço Praça Edson Miranda 106");
+		Report.startTest("Teste: Busca endereço válido");
 
 		driver = Driver.getFirefoxDriver();
 

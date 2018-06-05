@@ -18,7 +18,7 @@ public class VerificaIdiomaInglesTestCase {
 
 	@Before
 	public void setUp() {
-		Report.startTest("Teste de Alteração de Idioma Para o Inglês");
+		Report.startTest("Teste: Idioma - Tradução da Página para Inglês");
 
 		driver = Driver.getFirefoxDriver();
 

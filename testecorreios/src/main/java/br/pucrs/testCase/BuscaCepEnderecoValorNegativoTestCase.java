@@ -12,13 +12,13 @@ import br.pucrs.framework.Report;
 import br.pucrs.framework.Screenshot;
 import br.pucrs.verificationPoints.BuscaCepEnderecoNegativo04824080VerificationPoint;
 
-public class BuscaCepEnderecoNegativo04824080TestCase {
+public class BuscaCepEnderecoValorNegativoTestCase {
 	private WebDriver driver;
 	private BuscaCepEnderecoNegativo04824080VerificationPoint buscaCepEnderecoNegativo04824080VerificationPoint;
 
 	@Before
 	public void setUp() {
-		Report.startTest("Teste de Busca de Cep -04824080");
+		Report.startTest("Teste: Busca CEP - Valor Negativo");
 
 		driver = Driver.getFirefoxDriver();
 

@@ -15,7 +15,7 @@ public class BuscarAgenciaPorLocalidadeTestCase {
 
 	@Before
 	public void setUp() {
-		Report.startTest("Teste de Busca de Agência(Por Localidade)");
+		Report.startTest("Teste: Busca de Agência por Localidade");
 
 		driver = Driver.getFirefoxDriver();
 

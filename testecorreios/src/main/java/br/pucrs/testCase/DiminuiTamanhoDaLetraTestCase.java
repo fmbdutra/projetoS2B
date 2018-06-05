@@ -18,7 +18,7 @@ public class DiminuiTamanhoDaLetraTestCase {
 
 	@Before
 	public void setUp() {
-		Report.startTest("Teste de Acessibilidade(Diminuição da Fonte)");
+		Report.startTest("Teste: Acessibilidade - Diminuição do Tamanho da Letra");
 
 		driver = Driver.getFirefoxDriver();
 

@@ -18,7 +18,7 @@ public class BuscaCepEnderecoCampoVazioTestCase {
 
 	@Before
 	public void setUp() {
-		Report.startTest("Teste de Busca de Cep Mantendo O Campo Vazio");
+		Report.startTest("Teste: Busca CEP - Campo Vazio");
 
 		driver = Driver.getFirefoxDriver();
 

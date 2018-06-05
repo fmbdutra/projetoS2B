@@ -18,7 +18,7 @@ public class BuscarAgenciaPorServicoPlantaoBancoPostalTestCase {
 
 	@Before
 	public void setUp() {
-		Report.startTest("Buscar Agência Por Serviço - Plantao e Banco Postal");
+		Report.startTest("Teste: Busca de Agência por serviços - Plantão e Banco Postal");
 
 		driver = Driver.getFirefoxDriver();
 
