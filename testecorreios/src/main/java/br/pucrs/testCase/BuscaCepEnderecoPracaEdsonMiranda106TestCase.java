@@ -10,11 +10,11 @@ import com.aventstack.extentreports.Status;
 import br.pucrs.framework.Driver;
 import br.pucrs.framework.Report;
 import br.pucrs.framework.Screenshot;
-import br.pucrs.verificationPoints.BuscaCepEnderecoPracaEdsonMiranda106VerificationPoint;
+import br.pucrs.verificationPoints.BuscaCepEnderecoPucrsVerificationPoint;
 
 public class BuscaCepEnderecoPracaEdsonMiranda106TestCase {
 	private WebDriver driver;
-	private BuscaCepEnderecoPracaEdsonMiranda106VerificationPoint buscaCepEnderecoPracaEdsonMiranda106VerificationPoint;
+	private BuscaCepEnderecoPucrsVerificationPoint buscaCepEnderecoPucrsVerificationPoint;
 
 	@Before
 	public void setUp() {
@@ -27,13 +27,13 @@ public class BuscaCepEnderecoPracaEdsonMiranda106TestCase {
 
 		Report.log(Status.INFO, "A Página Foi Carregada", Screenshot.capture(driver));
 
-		this.buscaCepEnderecoPracaEdsonMiranda106VerificationPoint = new BuscaCepEnderecoPracaEdsonMiranda106VerificationPoint(
+		this.buscaCepEnderecoPucrsVerificationPoint = new BuscaCepEnderecoPucrsVerificationPoint(
 				driver);
 	}
 
 	@Test
 	public void main() throws InterruptedException {
-		this.buscaCepEnderecoPracaEdsonMiranda106VerificationPoint.checarBuscaCepEnderecoPracaEdsonMiranda106();
+		this.buscaCepEnderecoPucrsVerificationPoint.checarBuscaCepEnderecoPracaEdsonMiranda106();
 		
 	}
 

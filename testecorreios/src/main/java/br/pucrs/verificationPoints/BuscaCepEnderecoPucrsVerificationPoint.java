@@ -10,19 +10,19 @@ import br.pucrs.framework.Report;
 import br.pucrs.framework.Screenshot;
 import br.pucrs.tasks.BuscaCepEnderecoTask;
 
-public class BuscaCepEnderecoPracaEdsonMiranda106VerificationPoint {
+public class BuscaCepEnderecoPucrsVerificationPoint {
 	private WebDriver driver;
 
 	private BuscaCepEnderecoTask buscaCepEnderecoTask;
 
-	public BuscaCepEnderecoPracaEdsonMiranda106VerificationPoint(WebDriver driver) {
+	public BuscaCepEnderecoPucrsVerificationPoint(WebDriver driver) {
 		this.driver = driver;
 		this.buscaCepEnderecoTask = new BuscaCepEnderecoTask(driver);
 	}
 
 	public void checarBuscaCepEnderecoPracaEdsonMiranda106() throws InterruptedException {
 		
-		String endereco = "Praça Edson Miranda, 106";
+		String endereco = "pucrs";
 		
 		this.buscaCepEnderecoTask.preencherCepEnderecoInputText(endereco);
 		Report.log(Status.INFO, "O Endereço Foi Preenchido como: "+endereco);
