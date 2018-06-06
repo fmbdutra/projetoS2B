@@ -1,9 +1,5 @@
 package br.pucrs.testCase;
 
-import java.nio.ByteBuffer;
-import java.nio.CharBuffer;
-import java.nio.charset.Charset;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -26,19 +22,11 @@ public class BuscaCEPEnderecoCSVTestCase {
 	private WebDriver driver;
 	private BuscaCEPEnderecoCSVVerificationPoint buscaCEPEnderecoCSVVerificationPoint;
 
-	
-	String nameTest;
-		
-	@FileParameters("./teste.csv")
-	public String getNameTest(String input) {
-		this.nameTest=input;
-		return this.nameTest;
-	}
-
 	@Before
 	public void setUp() {
-		Report.startTest("Teste: Busca Endereço a Partir de Arquivo CSV - "+this.nameTest);
-		
+
+		Report.startTest("Testes: Busca Endereço a Partir de Arquivo CSV");
+
 		driver = Driver.getFirefoxDriver();
 
 		driver.get("http://www.buscacep.correios.com.br/sistemas/buscacep/BuscaCepEndereco.cfm");
