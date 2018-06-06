@@ -10,7 +10,7 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 public class Report {
-	private static final String DEFAULT_DESCRIPTION = "DBSERVER TEST SUITE";
+	private static final String DEFAULT_DESCRIPTION = "CORREIOS TEST CASE";
 	private static final String DEFAULT_PATH = "./reports/report_%s.html";
 	private static ExtentReports extentReport;
 	private static ExtentTest logger;

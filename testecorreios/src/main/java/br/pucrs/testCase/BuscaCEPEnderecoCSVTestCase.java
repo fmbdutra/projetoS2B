@@ -25,23 +25,22 @@ public class BuscaCEPEnderecoCSVTestCase {
 	@Before
 	public void setUp() {
 
-		Report.startTest("Testes: Busca Endereço a Partir de Arquivo CSV");
-
 		driver = Driver.getFirefoxDriver();
 
 		driver.get("http://www.buscacep.correios.com.br/sistemas/buscacep/BuscaCepEndereco.cfm");
 		driver.manage().window().maximize();
 
-		Report.log(Status.INFO, "A Página Foi Carregada", Screenshot.capture(driver));
-
 		this.buscaCEPEnderecoCSVVerificationPoint = new BuscaCEPEnderecoCSVVerificationPoint(driver);
 	}
 
 	@Test
-	@FileParameters("./teste.csv")
-	public void main(String input, String expected) throws InterruptedException {
-
+	@FileParameters("./src/main/resources/teste.csv")
+	public void main(String nome, String input, String expected) throws InterruptedException {
+		Report.startTest(nome);
+		
 		this.buscaCEPEnderecoCSVVerificationPoint.checarBuscaPorArquivoCSV(input, expected);
+		
+		
 
 	}
 
