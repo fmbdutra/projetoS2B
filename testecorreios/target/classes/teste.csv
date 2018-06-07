@@ -4,3 +4,5 @@ Busca CEP - valor negativo, -13481293,Alameda Raphael Gullo
 Busca CEP - campo vazio, ,INFORME
 Busca endereço válido, pucrs, Avenida Ipiranga\, 6681
 Busca endereco inválido, TESTECT30,DADOS NAO ENCONTRADOS
+Busca endereco digito a mais, 010000001,DADOS NAO ENCONTRADOS
+Busca endereco digito a menos, 0100000,DADOS NAO ENCONTRADOS
