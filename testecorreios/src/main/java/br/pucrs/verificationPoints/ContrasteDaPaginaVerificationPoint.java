@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 
 import com.aventstack.extentreports.Status;
 
+import br.pucrs.appObject.HomeAppObject;
 import br.pucrs.framework.Report;
 import br.pucrs.framework.Screenshot;
 import br.pucrs.tasks.ContrasteTask;
@@ -13,12 +14,14 @@ import br.pucrs.tasks.ContrasteTask;
 public class ContrasteDaPaginaVerificationPoint {
 	private WebDriver driver;
 	private ContrasteTask contrasteTask;
-
+	private HomeAppObject homeAppObject;
+	
 	boolean expected;
 
 	public ContrasteDaPaginaVerificationPoint(WebDriver driver) {
 		this.driver = driver;
 		this.contrasteTask = new ContrasteTask(driver);
+		this.homeAppObject = new HomeAppObject(driver);
 	}
 
 	private void errorContraste() {
@@ -26,20 +29,18 @@ public class ContrasteDaPaginaVerificationPoint {
 	}
 
 	public void checarFuncaoContraste() throws InterruptedException {
+		
+		String  fundoCab = this.homeAppObject.getCorCabecalhoHtml().getCssValue("background-color"),
+				fundoOpc = this.homeAppObject.getCorOpcoesHtml().getCssValue("backgroud-color"),
+				fundoSol = this.homeAppObject.getCorSolucoesHtml().getCssValue("backgroud-color"), 
+				fundoFim = this.homeAppObject.getCorFimHtml().getCssValue("backgroud-color"),
+				fundoRod = this.homeAppObject.getCorRodapeHtml().getCssValue("background-color");
 
-		String fundoCab = this.contrasteTask.verificaFundoCabecalho(),
-				fundoOpc = this.contrasteTask.verificaFundoOpcoes(),
-				fundoSol = this.contrasteTask.verificaFundoSolucoes(), fundoFim = this.contrasteTask.verificaFundoFim(),
-				fundoRod = this.contrasteTask.verificaFundoRodape();
-
-		String letraCab = this.contrasteTask.verificaFundoCabecalho(),
-				letraOpc = this.contrasteTask.verificaFundoOpcoes(),
-				letraSol = this.contrasteTask.verificaFundoSolucoes(), letraFim = this.contrasteTask.verificaFundoFim(),
-				letraRod = this.contrasteTask.verificaTextoRodape();
-
-		this.contrasteTask.apertaBotãoContraste();
-
-		Report.log(Status.INFO, "O Botão Contraste Foi Clicado na Página Inicial");
+		String  letraCab = this.homeAppObject.getCorCabecalhoHtml().getCssValue("color"),
+				letraOpc = this.homeAppObject.getCorOpcoesHtml().getCssValue("color"),
+				letraSol = this.homeAppObject.getCorOpcoesHtml().getCssValue("color"), 
+				letraFim = this.homeAppObject.getCorFimHtml().getCssValue("color"),
+				letraRod = this.homeAppObject.getCorRodapeHtml().getCssValue("color");		
 
 		// this.driver.wait(2000);
 		Thread.sleep(2000);
@@ -62,11 +63,13 @@ public class ContrasteDaPaginaVerificationPoint {
 							Screenshot.capture(driver));
 
 					this.contrasteTask.percorrePagina();
+					
 					if (fundoFim == "#000 !important" || fundoFim == "black") {
 						Report.log(Status.INFO, "O Fundo em Preto Foi Apresetando no Fim da Página",
 								Screenshot.capture(driver));
 
 						this.contrasteTask.percorrePagina();
+						
 						if (fundoRod == "#000 !important" || fundoRod == "black") {
 							Report.log(Status.INFO, "O Fundo em Preto Foi Apresetando no Rodapé Página",
 									Screenshot.capture(driver));
