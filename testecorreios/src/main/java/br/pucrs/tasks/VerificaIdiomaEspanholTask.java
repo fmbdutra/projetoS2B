@@ -11,8 +11,7 @@ public class VerificaIdiomaEspanholTask {
 		this.homeAppObject = new HomeAppObject(driver);
 	}
 
-	public String apertarBotaoEspanhol() {
+	public void apertarBotaoEspanhol() {
 		this.homeAppObject.getEspanholButton().click();
-		return this.homeAppObject.getTrackAndTrace().getText();
 	}
 }
