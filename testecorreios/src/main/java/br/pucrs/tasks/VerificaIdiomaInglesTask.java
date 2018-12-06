@@ -12,8 +12,7 @@ public class VerificaIdiomaInglesTask {
 		this.homeAppObject = new HomeAppObject(driver);
 	}
 
-	public String apertarBotaoEnglish() {
+	public void apertarBotaoEnglish() {
 		this.homeAppObject.getEnglishButton().click();
-		return this.homeAppObject.getTrackAndTrace().getText();
 	}
 }

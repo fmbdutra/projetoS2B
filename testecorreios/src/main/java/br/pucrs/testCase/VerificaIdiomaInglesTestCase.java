@@ -10,11 +10,13 @@ import com.aventstack.extentreports.Status;
 import br.pucrs.framework.Driver;
 import br.pucrs.framework.Report;
 import br.pucrs.framework.Screenshot;
+import br.pucrs.tasks.VerificaIdiomaInglesTask;
 import br.pucrs.verificationPoints.VerificaIdiomaInglesVerificationPoint;
 
 public class VerificaIdiomaInglesTestCase {
 	private WebDriver driver;
 	private VerificaIdiomaInglesVerificationPoint verificaIdiomaInglesVerificationPoint;
+	private VerificaIdiomaInglesTask verificaIdiomaInglesTask;
 
 	@Before
 	public void setUp() {
@@ -25,13 +27,18 @@ public class VerificaIdiomaInglesTestCase {
 		driver.get("http://www.correios.com.br/");
 		driver.manage().window().maximize();
 
-		this.verificaIdiomaInglesVerificationPoint = new VerificaIdiomaInglesVerificationPoint(driver);
-
 		Report.log(Status.INFO, "A página foi carregada", Screenshot.capture(driver));
+		
+		this.verificaIdiomaInglesTask = new VerificaIdiomaInglesTask(driver);
+		this.verificaIdiomaInglesVerificationPoint = new VerificaIdiomaInglesVerificationPoint(driver);
 	}
 
 	@Test
 	public void main() {
+				
+		this.verificaIdiomaInglesTask.apertarBotaoEnglish();
+		Report.log(Status.INFO, "O Botão English Foi Pressionado");		
+		
 		this.verificaIdiomaInglesVerificationPoint.verificarIdiomaDoTexto();
 	}
 
