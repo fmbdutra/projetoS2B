@@ -13,8 +13,7 @@ public class AumentaTamanhoDaLetraTask {
 
 	}
 
-	public String apertarBotaoAumentar() {
+	public void apertarBotaoAumentar() {
 		this.homeAppObject.getAumentaTextoButton().click();
-		return this.homeAppObject.getFonteDoTextoHtml().getCssValue("font-size");
 	}
 }

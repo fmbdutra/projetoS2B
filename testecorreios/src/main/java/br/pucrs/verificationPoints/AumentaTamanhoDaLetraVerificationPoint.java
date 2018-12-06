@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 
 import com.aventstack.extentreports.Status;
 
+import br.pucrs.appObject.HomeAppObject;
 import br.pucrs.framework.Report;
 import br.pucrs.framework.Screenshot;
 import br.pucrs.tasks.AumentaTamanhoDaLetraTask;
@@ -15,14 +16,17 @@ public class AumentaTamanhoDaLetraVerificationPoint {
 
 	private AumentaTamanhoDaLetraTask aumentaTamanhoDaLetraTask;
 
+	private HomeAppObject homeAppObject;
+
 	public AumentaTamanhoDaLetraVerificationPoint(WebDriver driver) {
 		this.driver = driver;
-		this.aumentaTamanhoDaLetraTask = new AumentaTamanhoDaLetraTask(driver);
+		this.homeAppObject = new HomeAppObject(driver);
 	}
 
 	public void checarAumentoDaFonte() {
-		String atual = this.aumentaTamanhoDaLetraTask.apertarBotaoAumentar();
-		Report.log(Status.INFO, "O Botão A+ Foi Pressionado");
+				
+		String atual = this.homeAppObject.getFonteDoTextoHtml().getCssValue("font-size");			
+						
 		if (atual == "17px") {
 			Report.log(Status.PASS, "O Tamanho Da Fonte Do Texto Foi Alterado Conforme O Esperado.",
 					Screenshot.capture(driver));
@@ -30,6 +34,7 @@ public class AumentaTamanhoDaLetraVerificationPoint {
 			Report.log(Status.FAIL, "O Tamanho Da Fonte Do Texto Não Foi Alterado Conforme O Esperado.",
 					Screenshot.capture(driver));
 		}
+		
 		assertEquals("17px", atual);
 	}
 
