@@ -4,4 +4,4 @@ language:
 jdk:
   - oraclejdk8
   
-before_script: cd testeCorreios
+before_script: cd testecorreios
