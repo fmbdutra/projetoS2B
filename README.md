@@ -5,7 +5,7 @@ Repositório utilizado para guardar o projeto final S2B
 
 <hr>
 Testes Automatizados - Site dos Correios
-<br>
+<br><br>
 Resumo:
 <br>O intuito do projeto é testar funcionalidades do site da empresa Correios, sendo esses de acessbilidades, idiomas, busca de agências e busca de CEP, aplicando PageObjects, integração contínua, Selenium WebDriver, entre outros conhecimentos de testes.
 <br><br>
