@@ -10,13 +10,13 @@ import com.aventstack.extentreports.Status;
 import br.pucrs.framework.Driver;
 import br.pucrs.framework.Report;
 import br.pucrs.framework.Screenshot;
-import br.pucrs.tasks.VerificaIdiomaInglesTask;
+import br.pucrs.tasks.VerificaIdiomaTask;
 import br.pucrs.verificationPoints.VerificaIdiomaInglesVerificationPoint;
 
 public class VerificaIdiomaInglesTestCase {
 	private WebDriver driver;
 	private VerificaIdiomaInglesVerificationPoint verificaIdiomaInglesVerificationPoint;
-	private VerificaIdiomaInglesTask verificaIdiomaInglesTask;
+	private VerificaIdiomaTask idiomaTask;
 
 	@Before
 	public void setUp() {
@@ -29,14 +29,14 @@ public class VerificaIdiomaInglesTestCase {
 
 		Report.log(Status.INFO, "A página foi carregada", Screenshot.capture(driver));
 		
-		this.verificaIdiomaInglesTask = new VerificaIdiomaInglesTask(driver);
+		this.idiomaTask = new VerificaIdiomaTask(driver);
 		this.verificaIdiomaInglesVerificationPoint = new VerificaIdiomaInglesVerificationPoint(driver);
 	}
 
 	@Test
 	public void main() {
 				
-		this.verificaIdiomaInglesTask.apertarBotaoEnglish();
+		this.idiomaTask.apertarBotaoEnglish();
 		Report.log(Status.INFO, "O Botão English Foi Pressionado");		
 		
 		this.verificaIdiomaInglesVerificationPoint.verificarIdiomaDoTexto();

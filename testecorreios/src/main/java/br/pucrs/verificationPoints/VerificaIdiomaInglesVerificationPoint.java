@@ -9,7 +9,7 @@ import com.aventstack.extentreports.Status;
 import br.pucrs.framework.Report;
 import br.pucrs.framework.Screenshot;
 import br.pucrs.pageObject.HomePage;
-import br.pucrs.tasks.VerificaIdiomaInglesTask;
+import br.pucrs.tasks.VerificaIdiomaTask;
 
 public class VerificaIdiomaInglesVerificationPoint {
 	private WebDriver driver;
