@@ -1,7 +1,5 @@
 # Testes Automatizados - Site dos Correios [![Build Status](https://travis-ci.org/fmbdutra/projetoS2B.svg?branch=master)](https://travis-ci.org/fmbdutra/projetoS2B)
 
-<hr>
-
 Resumo:
 <br>O intuito do projeto é testar funcionalidades do site da empresa Correios, sendo esses de acessbilidades, idiomas, busca de agências e busca de CEP, aplicando PageObjects, integração contínua, Selenium WebDriver, entre outros conhecimentos de testes.
 <br><br>
