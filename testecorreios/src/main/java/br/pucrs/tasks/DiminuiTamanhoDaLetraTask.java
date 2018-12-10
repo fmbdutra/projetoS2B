@@ -2,18 +2,17 @@ package br.pucrs.tasks;
 
 import org.openqa.selenium.WebDriver;
 
-import br.pucrs.appObject.HomeAppObject;
+import br.pucrs.pageObject.HomePage;
 
 public class DiminuiTamanhoDaLetraTask {
 
-	private HomeAppObject homeAppObject;
+	private HomePage home;
 
 	public DiminuiTamanhoDaLetraTask(WebDriver driver) {
-		this.homeAppObject = new HomeAppObject(driver);
+		this.home = new HomePage(driver);
 	}
 
-	public String apertarBotaoDiminuir() {
-		this.homeAppObject.getDiminuiTextoButton().click();
-		return this.homeAppObject.getFonteDoTextoHtml().getCssValue("font-size");
+	public void apertarBotaoDiminuir() {
+		this.home.getDiminuiTextoButton().click();
 	}
 }
