@@ -10,13 +10,13 @@ import com.aventstack.extentreports.Status;
 import br.pucrs.framework.Driver;
 import br.pucrs.framework.Report;
 import br.pucrs.framework.Screenshot;
-import br.pucrs.tasks.DiminuiTamanhoDaLetraTask;
+import br.pucrs.tasks.TamanhoDaLetraTask;
 import br.pucrs.verificationPoints.DiminuiTamanhoDaLetraVerificationPoint;
 
 public class DiminuiTamanhoDaLetraTestCase {
 	private WebDriver driver;
 	private DiminuiTamanhoDaLetraVerificationPoint diminuiTamanhoDaLetraVerificationPoint;
-	private DiminuiTamanhoDaLetraTask diminuiTamanhoDaLetraTask;
+	private TamanhoDaLetraTask tamanhoLetraTask;
 
 	@Before
 	public void setUp() {
@@ -28,7 +28,7 @@ public class DiminuiTamanhoDaLetraTestCase {
 		driver.manage().window().maximize();
 
 		this.diminuiTamanhoDaLetraVerificationPoint = new DiminuiTamanhoDaLetraVerificationPoint(driver);
-		this.diminuiTamanhoDaLetraTask = new DiminuiTamanhoDaLetraTask(driver);
+		this.tamanhoLetraTask = new TamanhoDaLetraTask(driver);
 
 		Report.log(Status.INFO, "A página foi carregada", Screenshot.capture(driver));
 	}
@@ -36,7 +36,7 @@ public class DiminuiTamanhoDaLetraTestCase {
 	@Test
 	public void main() {
 		
-		diminuiTamanhoDaLetraTask.apertarBotaoDiminuir();		
+		tamanhoLetraTask.apertarBotaoDiminuir();		
 		Report.log(Status.INFO, "O Botão A- Foi Pressionado");
 		
 		this.diminuiTamanhoDaLetraVerificationPoint.verificarReducaoDaFonte();
