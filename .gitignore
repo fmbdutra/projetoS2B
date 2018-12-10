@@ -3,6 +3,8 @@
 /testecorreios/.project
 /testecorreios/.gitignore
 /testecorreios/.settings
+/testecorreios/.idea
+*.iml
 *.class
 
 
