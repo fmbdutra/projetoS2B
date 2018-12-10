@@ -6,5 +6,5 @@ Resumo:
 <i>
 Este fork foi feito para aplicar novos conhecimentos de teste automatizado com Selenium adquiridos após o curso Students to Business 2018/1 e preservar o projeto original o qual também tive contribuição.
 <br/>
-A pasta "Documentação" segue com documentos originais os quais foram apresentado na conclusão do curso Students to Business 2018/1 na PUCRS e mostram a estrutura base do projeto. 
+A diretório "Documentação" segue com documentos originais os quais foram apresentados na conclusão do curso Students to Business 2018/1 (S2B) na PUCRS e mostram a estrutura base do projeto. 
 <br/><br/>
