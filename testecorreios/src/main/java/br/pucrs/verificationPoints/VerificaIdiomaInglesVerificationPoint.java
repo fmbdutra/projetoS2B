@@ -6,18 +6,18 @@ import org.openqa.selenium.WebDriver;
 
 import com.aventstack.extentreports.Status;
 
-import br.pucrs.appObject.HomeAppObject;
 import br.pucrs.framework.Report;
 import br.pucrs.framework.Screenshot;
+import br.pucrs.pageObject.HomePage;
 import br.pucrs.tasks.VerificaIdiomaInglesTask;
 
 public class VerificaIdiomaInglesVerificationPoint {
 	private WebDriver driver;
-	private HomeAppObject homeAppObject;
+	private HomePage homeAppObject;
 
 	public VerificaIdiomaInglesVerificationPoint(WebDriver driver) {
 		this.driver = driver;
-		this.homeAppObject = new HomeAppObject(driver);
+		this.homeAppObject = new HomePage(driver);
 	}
 
 	public void verificarIdiomaDoTexto() {

@@ -6,9 +6,9 @@ import org.openqa.selenium.WebDriver;
 
 import com.aventstack.extentreports.Status;
 
-import br.pucrs.appObject.HomeAppObject;
 import br.pucrs.framework.Report;
 import br.pucrs.framework.Screenshot;
+import br.pucrs.pageObject.HomePage;
 import br.pucrs.tasks.AumentaTamanhoDaLetraTask;
 
 public class AumentaTamanhoDaLetraVerificationPoint {
@@ -16,11 +16,11 @@ public class AumentaTamanhoDaLetraVerificationPoint {
 
 	private AumentaTamanhoDaLetraTask aumentaTamanhoDaLetraTask;
 
-	private HomeAppObject homeAppObject;
+	private HomePage homeAppObject;
 
 	public AumentaTamanhoDaLetraVerificationPoint(WebDriver driver) {
 		this.driver = driver;
-		this.homeAppObject = new HomeAppObject(driver);
+		this.homeAppObject = new HomePage(driver);
 	}
 
 	public void checarAumentoDaFonte() {

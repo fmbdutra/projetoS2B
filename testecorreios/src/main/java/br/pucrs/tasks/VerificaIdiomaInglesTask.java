@@ -2,17 +2,17 @@ package br.pucrs.tasks;
 
 import org.openqa.selenium.WebDriver;
 
-import br.pucrs.appObject.HomeAppObject;
+import br.pucrs.pageObject.HomePage;
 
 public class VerificaIdiomaInglesTask {
 
-	private HomeAppObject homeAppObject;
+	private HomePage home;
 
 	public VerificaIdiomaInglesTask(WebDriver driver) {
-		this.homeAppObject = new HomeAppObject(driver);
+		this.home = new HomePage(driver);
 	}
 
 	public void apertarBotaoEnglish() {
-		this.homeAppObject.getEnglishButton().click();
+		this.home.getEnglishButton().click();
 	}
 }

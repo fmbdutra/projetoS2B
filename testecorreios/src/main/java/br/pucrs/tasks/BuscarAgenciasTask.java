@@ -4,43 +4,43 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
-import br.pucrs.appObject.BuscarAgenciasAppObject;
-import br.pucrs.appObject.HomeAppObject;
+import br.pucrs.pageObject.BuscarAgenciasPage;
+import br.pucrs.pageObject.HomePage;
 
 public class BuscarAgenciasTask {
 
-	private HomeAppObject homeAppObject;
-	private BuscarAgenciasAppObject buscarAgenciasAppObject;
+	private HomePage home;
+	private BuscarAgenciasPage buscarAgencias;
 	private WebDriver driver;
 
 	public BuscarAgenciasTask(WebDriver driver) {
 		this.driver = driver;
-		this.homeAppObject = new HomeAppObject(driver);
-		this.buscarAgenciasAppObject = new BuscarAgenciasAppObject(driver);
+		this.home = new HomePage(driver);
+		this.buscarAgencias = new BuscarAgenciasPage(driver);
 	}
 
 	public void apertarBotaoBuscarAgencia() {
-		this.homeAppObject.getBuscarAgenciaButton().click();
+		this.home.getBuscarAgenciaButton().click();
 	}
 	
 	public void selecionarLocalidade() {
-		this.buscarAgenciasAppObject.getLocalidadeRadialButton().click();
+		this.buscarAgencias.getLocalidadeRadialButton().click();
 	}
 
 	public void selecionarProximidade() {
-		this.buscarAgenciasAppObject.getProximidadeRadialButton().click();
+		this.buscarAgencias.getProximidadeRadialButton().click();
 	}
 
 	public void digitarLocalizacao(String endereco) {
-		this.buscarAgenciasAppObject.getEnderecoTextField().sendKeys(endereco);
+		this.buscarAgencias.getEnderecoTextField().sendKeys(endereco);
 	}
 
 	public void pesquisarLocalizacao() {
-		this.buscarAgenciasAppObject.getPesquisarButton().click();
+		this.buscarAgencias.getPesquisarButton().click();
 	}
 
 	public boolean verificaCarregamentodoMapa() {
-		return this.buscarAgenciasAppObject.getCarregamentoImg().isDisplayed();
+		return this.buscarAgencias.getCarregamentoImg().isDisplayed();
 	}
 
 	public void rolarPaginaParaVerificarResultado() {
@@ -49,51 +49,51 @@ public class BuscarAgenciasTask {
 	}
 
 	public void selecionarEstado(String estado) {
-		this.buscarAgenciasAppObject.getEstadoComboBox().click();
+		this.buscarAgencias.getEstadoComboBox().click();
 		this.driver.findElement(By.xpath(estado)).click();
 	}
 
 	public void selecionarMunicipio(String municipio) {
-		this.buscarAgenciasAppObject.getMunicipioComboBox().click();
+		this.buscarAgencias.getMunicipioComboBox().click();
 		;
 		this.driver.findElement(By.xpath(municipio)).click();
 	}
 
 	public void selecionarBairro(String bairro) {
-		this.buscarAgenciasAppObject.getBairroComboBox().click();
+		this.buscarAgencias.getBairroComboBox().click();
 		this.driver.findElement(By.xpath(bairro)).click();
 	}
 
 	public void selecionarHorario(String horario) {
-		this.buscarAgenciasAppObject.getHorarioComboBox().click();
+		this.buscarAgencias.getHorarioComboBox().click();
 		this.driver.findElement(By.xpath(horario)).click();
 	}
 
 	public void selecionarAtendimentoSabado() {
-		this.buscarAgenciasAppObject.getSabadoCheckBox().click();
+		this.buscarAgencias.getSabadoCheckBox().click();
 	}
 
 	public void selecionarAtendimentoDomingo() {
-		this.buscarAgenciasAppObject.getDomingoCheckBox().click();
+		this.buscarAgencias.getDomingoCheckBox().click();
 	}
 
 	public void selecionarAtendimentoBancoPostal() {
-		this.buscarAgenciasAppObject.getBancoPostalCheckBox().click();
+		this.buscarAgencias.getBancoPostalCheckBox().click();
 	}
 
 	public void selecionarAtendimentoPlantao() {
-		this.buscarAgenciasAppObject.getPlantaoCheckBox().click();
+		this.buscarAgencias.getPlantaoCheckBox().click();
 	}
 
 	public void selecionarAtendimentoCertificadoDigital() {
-		this.buscarAgenciasAppObject.getCertificadoDigitalCheckBox().click();
+		this.buscarAgencias.getCertificadoDigitalCheckBox().click();
 	}
 
 	public void clicarNoBody() {
-		this.buscarAgenciasAppObject.getTagBodyClick().click();
+		this.buscarAgencias.getTagBodyClick().click();
 	}
 	
 	public void primeiroResultadoDaBusca() {
-		this.buscarAgenciasAppObject.getPrimeiroAgenciaDaBuscaLink().click();
+		this.buscarAgencias.getPrimeiroAgenciaDaBuscaLink().click();
 	}
 }

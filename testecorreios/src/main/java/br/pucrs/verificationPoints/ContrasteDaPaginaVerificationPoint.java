@@ -6,22 +6,22 @@ import org.openqa.selenium.WebDriver;
 
 import com.aventstack.extentreports.Status;
 
-import br.pucrs.appObject.HomeAppObject;
 import br.pucrs.framework.Report;
 import br.pucrs.framework.Screenshot;
+import br.pucrs.pageObject.HomePage;
 import br.pucrs.tasks.ContrasteTask;
 
 public class ContrasteDaPaginaVerificationPoint {
 	private WebDriver driver;
 	private ContrasteTask contrasteTask;
-	private HomeAppObject homeAppObject;
+	private HomePage homeAppObject;
 	
 	boolean expected;
 
 	public ContrasteDaPaginaVerificationPoint(WebDriver driver) {
 		this.driver = driver;
 		this.contrasteTask = new ContrasteTask(driver);
-		this.homeAppObject = new HomeAppObject(driver);
+		this.homeAppObject = new HomePage(driver);
 	}
 
 	private void errorContraste() {

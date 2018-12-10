@@ -7,9 +7,9 @@ import org.openqa.selenium.WebDriver;
 
 import com.aventstack.extentreports.Status;
 
-import br.pucrs.appObject.BuscarAgenciasAppObject;
 import br.pucrs.framework.Driver;
 import br.pucrs.framework.Report;
+import br.pucrs.pageObject.BuscarAgenciasPage;
 import br.pucrs.tasks.BuscarAgenciasTask;
 import br.pucrs.verificationPoints.BuscarAgenciaPorLocalidadeVerificationPoint;
 

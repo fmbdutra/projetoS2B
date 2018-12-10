@@ -2,18 +2,18 @@ package br.pucrs.tasks;
 
 import org.openqa.selenium.WebDriver;
 
-import br.pucrs.appObject.HomeAppObject;
+import br.pucrs.pageObject.HomePage;
 
 public class AumentaTamanhoDaLetraTask {
 
-	private HomeAppObject homeAppObject;
+	private HomePage home;
 
 	public AumentaTamanhoDaLetraTask(WebDriver driver) {
-		this.homeAppObject = new HomeAppObject(driver);
+		this.home = new HomePage(driver);
 
 	}
 
 	public void apertarBotaoAumentar() {
-		this.homeAppObject.getAumentaTextoButton().click();
+		this.home.getAumentaTextoButton().click();
 	}
 }

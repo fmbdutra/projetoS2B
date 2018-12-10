@@ -7,10 +7,10 @@ import org.openqa.selenium.WebDriver;
 
 import com.aventstack.extentreports.Status;
 
-import br.pucrs.appObject.BuscarAgenciasAppObject;
-import br.pucrs.appObject.HomeAppObject;
 import br.pucrs.framework.Report;
 import br.pucrs.framework.Screenshot;
+import br.pucrs.pageObject.BuscarAgenciasPage;
+import br.pucrs.pageObject.HomePage;
 import br.pucrs.tasks.BuscarAgenciasTask;
 
 public class BuscarAgenciaPorLocalidadeVerificationPoint {
@@ -18,12 +18,12 @@ public class BuscarAgenciaPorLocalidadeVerificationPoint {
 	private WebDriver driver;
 
 	private BuscarAgenciasTask buscarAgenciasTask;
-	private BuscarAgenciasAppObject buscarAgenciasAppObject;
-	private HomeAppObject homeAppObject;
+	private BuscarAgenciasPage buscarAgenciasAppObject;
+	private HomePage homeAppObject;
 
 	public BuscarAgenciaPorLocalidadeVerificationPoint(WebDriver driver) {
 		this.driver = driver;
-		this.homeAppObject = new HomeAppObject(driver);
+		this.homeAppObject = new HomePage(driver);
 	}
 
 	public void checarBuscaporLocalidade() throws InterruptedException {

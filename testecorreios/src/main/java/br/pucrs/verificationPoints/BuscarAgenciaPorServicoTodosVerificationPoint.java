@@ -7,19 +7,19 @@ import org.openqa.selenium.WebDriver;
 
 import com.aventstack.extentreports.Status;
 
-import br.pucrs.appObject.BuscarAgenciasAppObject;
 import br.pucrs.framework.Report;
 import br.pucrs.framework.Screenshot;
+import br.pucrs.pageObject.BuscarAgenciasPage;
 import br.pucrs.tasks.BuscarAgenciasTask;
 
 public class BuscarAgenciaPorServicoTodosVerificationPoint {
 	private WebDriver driver;
 
 	private BuscarAgenciasTask buscarAgenciasTask;
-	private BuscarAgenciasAppObject buscarAgenciasAppObject;
+	private BuscarAgenciasPage buscarAgenciasAppObject;
 
 	public BuscarAgenciaPorServicoTodosVerificationPoint(WebDriver driver) {
-		this.buscarAgenciasAppObject = new BuscarAgenciasAppObject(driver);
+		this.buscarAgenciasAppObject = new BuscarAgenciasPage(driver);
 		this.driver = driver;
 		this.buscarAgenciasTask = new BuscarAgenciasTask(driver);
 	}
