@@ -1,8 +1,9 @@
 /testeCorreios/target
 
-/testeCorreios/.classpath
-/testeCorreios/.project
-/testeCorreios/.gitignore
+/testecorreios/.classpath
+/testecorreios/.project
+/testecorreios/.gitignore
+/testecorreios/.settings
 *.class
 
 
