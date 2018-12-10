@@ -1,1 +1,8 @@
-/target/
+/testeCorreios/target
+
+/testeCorreios/.classpath
+/testeCorreios/project
+/testeCorreios/.gitignore
+*.class
+
+
