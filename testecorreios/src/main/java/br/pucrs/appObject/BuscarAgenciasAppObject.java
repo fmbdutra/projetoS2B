@@ -1,5 +1,7 @@
 package br.pucrs.appObject;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -82,4 +84,9 @@ public class BuscarAgenciasAppObject {
 	public WebElement getTagBodyClick() {
 		return this.driver.findElement(By.xpath("/html/body/div[1]/div[3]/div[2]/div/div"));
 	}
+	
+	public List<WebElement> getTabelaDeBusca() {
+		return this.driver.findElements(By.xpath("//*[@id=\"tableNomeAgencia\"]/tbody/tr/td[1]/a"));
+	}
+
 }

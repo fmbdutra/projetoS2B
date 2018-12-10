@@ -22,8 +22,12 @@ public class BuscarAgenciasTask {
 	public void apertarBotaoBuscarAgencia() {
 		this.homeAppObject.getBuscarAgenciaButton().click();
 	}
+	
+	public void selecionarLocalidade() {
+		this.buscarAgenciasAppObject.getLocalidadeRadialButton().click();
+	}
 
-	public void selecionarProximidadeRadialButton() {
+	public void selecionarProximidade() {
 		this.buscarAgenciasAppObject.getProximidadeRadialButton().click();
 	}
 
@@ -44,18 +48,18 @@ public class BuscarAgenciasTask {
 		js.executeScript("window.scrollTo(0,200)");
 	}
 
-	public void selecionarEstadoComboBox(String estado) {
+	public void selecionarEstado(String estado) {
 		this.buscarAgenciasAppObject.getEstadoComboBox().click();
 		this.driver.findElement(By.xpath(estado)).click();
 	}
 
-	public void selecionarMunicipioComboBox(String municipio) {
+	public void selecionarMunicipio(String municipio) {
 		this.buscarAgenciasAppObject.getMunicipioComboBox().click();
 		;
 		this.driver.findElement(By.xpath(municipio)).click();
 	}
 
-	public void selecionarBairroComboBox(String bairro) {
+	public void selecionarBairro(String bairro) {
 		this.buscarAgenciasAppObject.getBairroComboBox().click();
 		this.driver.findElement(By.xpath(bairro)).click();
 	}
@@ -87,5 +91,9 @@ public class BuscarAgenciasTask {
 
 	public void clicarNoBody() {
 		this.buscarAgenciasAppObject.getTagBodyClick().click();
+	}
+	
+	public void primeiroResultadoDaBusca() {
+		this.buscarAgenciasAppObject.getPrimeiroAgenciaDaBuscaLink().click();
 	}
 }

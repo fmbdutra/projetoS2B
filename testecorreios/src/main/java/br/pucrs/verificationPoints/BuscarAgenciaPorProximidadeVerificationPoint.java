@@ -26,7 +26,7 @@ public class BuscarAgenciaPorProximidadeVerificationPoint {
 		this.buscarAgenciasTask.apertarBotaoBuscarAgencia();
 		Report.log(Status.INFO, "Entrou Na Página Inicial dos Correios");
 
-		this.buscarAgenciasTask.selecionarProximidadeRadialButton();
+		this.buscarAgenciasTask.selecionarProximidade();
 		Report.log(Status.INFO, "Entrou na Página De 'Busca de Agências'");
 
 		Report.log(Status.INFO, "Buscar Agências Por Proximidade Foi Selecionado");

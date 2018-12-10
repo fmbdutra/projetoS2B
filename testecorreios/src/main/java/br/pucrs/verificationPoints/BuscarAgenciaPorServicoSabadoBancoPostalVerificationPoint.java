@@ -32,13 +32,13 @@ public class BuscarAgenciaPorServicoSabadoBancoPostalVerificationPoint {
 		Report.log(Status.INFO, "Buscar Agências Por Servico Foi Selecionado");
 
 		// PASSAR XPATH POR PARAMETRO
-		this.buscarAgenciasTask.selecionarEstadoComboBox("//*[@id=\"estadoAgencia\"]/option[24]");
+		this.buscarAgenciasTask.selecionarEstado("//*[@id=\"estadoAgencia\"]/option[24]");
 		Report.log(Status.INFO, "O Estado Rio Grande do Sul Foi Selecionado");
 
-		this.buscarAgenciasTask.selecionarMunicipioComboBox("//*[@id=\"municipioAgencia\"]/option[327]");
+		this.buscarAgenciasTask.selecionarMunicipio("//*[@id=\"municipioAgencia\"]/option[327]");
 		Report.log(Status.INFO, "O Município Porto Alegre Foi Selecionado");
 
-		this.buscarAgenciasTask.selecionarBairroComboBox("//*[@id=\"bairroAgencia\"]/option[8]");
+		this.buscarAgenciasTask.selecionarBairro("//*[@id=\"bairroAgencia\"]/option[8]");
 		Report.log(Status.INFO, "O Bairro Centro Histórico Foi Selecionado");
 
 		this.buscarAgenciasTask.clicarNoBody();

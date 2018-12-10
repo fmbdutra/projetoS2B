@@ -18,40 +18,17 @@ public class BuscarAgenciaPorLocalidadeVerificationPoint {
 	private WebDriver driver;
 
 	private BuscarAgenciasTask buscarAgenciasTask;
-	// private BuscarAgenciaPorLocalidadeTask buscarAgenciaPorLocalidadeTask;
 	private BuscarAgenciasAppObject buscarAgenciasAppObject;
 	private HomeAppObject homeAppObject;
 
 	public BuscarAgenciaPorLocalidadeVerificationPoint(WebDriver driver) {
 		this.driver = driver;
-		this.buscarAgenciasAppObject = new BuscarAgenciasAppObject(driver);
-		this.buscarAgenciasTask = new BuscarAgenciasTask(driver);
 		this.homeAppObject = new HomeAppObject(driver);
 	}
 
 	public void checarBuscaporLocalidade() throws InterruptedException {
 
-		this.homeAppObject.getBuscarAgenciaButton().click();
-		Report.log(Status.INFO, "Entrou Na Página Inicial dos Correios");
-
-		this.buscarAgenciasAppObject.getLocalidadeRadialButton().click();
-		Report.log(Status.INFO, "Entrou na Página De 'Busca de Agências'");
-		Report.log(Status.INFO, "Buscar Agências Por Localização Foi Selecionado");
-
-		this.buscarAgenciasTask.selecionarEstadoComboBox("//*[@id=\"estadoAgencia\"]/option[24]");
-		Report.log(Status.INFO, "O Estado Rio Grande do Sul Foi Selecionado");
-
-		this.buscarAgenciasTask.selecionarMunicipioComboBox("//*[@id=\"municipioAgencia\"]/option[327]");
-		Report.log(Status.INFO, "O Município Porto Alegre Foi Selecionado");
-
-		this.buscarAgenciasTask.selecionarBairroComboBox("//*[@id=\"bairroAgencia\"]/option[10]");
-		Report.log(Status.INFO, "O Bairro Cristo Redentor Foi Selecionado");
-
-		Thread.sleep(4000);
-
-		this.buscarAgenciasAppObject.getPrimeiroAgenciaDaBuscaLink().click();
-
-		int size = driver.findElements(By.xpath("//*[@id=\"tableNomeAgencia\"]/tbody/tr/td[1]/a")).size();
+		int size = buscarAgenciasAppObject.getTabelaDeBusca().size();
 		Boolean teste = false;
 
 		if (size != 0) {
